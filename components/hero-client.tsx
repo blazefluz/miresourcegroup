@@ -40,8 +40,8 @@ export function HeroClient({ content }: HeroClientProps) {
             backgroundImage: `url('${bgImageUrl}')`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/50" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/90 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-linear-to-r from-background via-transparent to-background/50" />
       </div>
 
       {/* Grid Pattern Overlay */}

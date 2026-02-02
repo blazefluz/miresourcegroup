@@ -8,7 +8,7 @@ import Footer from "@/components/footer-simple"
 
 export const metadata: Metadata = {
   title: "Testimonials | M.I Resource Services Ltd",
-  description: "What our clients say about M.I Resource Services Ltd's exceptional Oil & Gas support services.",
+  description: "What our clients say about working with M.I Resource Services Ltd.",
 }
 
 export default function TestimonialsPage() {
@@ -16,9 +16,9 @@ export default function TestimonialsPage() {
     <PageWrapper>
       <Header />
       <PageHero
-        title="Testimonials"
-        subtitle="What our clients say about our exceptional service delivery"
-        backgroundImage="/portrait-smiling-male-worker-wearing-hard-hat-warehouse.jpg"
+        title="Client Testimonials"
+        subtitle="Hear from our satisfied clients about their experience working with us"
+        backgroundImage="/engineers-optimizing-automated-factory-systems.jpg"
       />
       <Testimonials />
       <CTASection />

@@ -5,7 +5,7 @@ import { PageWrapper } from "@/components/layouts/page-wrapper"
 import About from "@/components/about-simple"
 import { MissionVision } from "@/components/about/mission-vision"
 import { CoreValues } from "@/components/about/core-values"
-import { CompanyCapabilities } from "@/components/about/company-capabilities"
+import { KeyCapabilities } from "@/components/about/key-capabilities"
 import { CompanyTimeline } from "@/components/about/company-timeline"
 import { CompanyStats } from "@/components/about/company-stats"
 import { TeamShowcase } from "@/components/about/team-showcase"
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <About />
       <MissionVision />
       <CoreValues />
-      <CompanyCapabilities />
+      <KeyCapabilities />
       <CompanyStats />
       <TeamShowcase />
       <CompanyTimeline />

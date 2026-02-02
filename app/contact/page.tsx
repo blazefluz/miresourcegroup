@@ -3,11 +3,20 @@ import Header from "@/components/header-simple"
 import { PageHero } from "@/components/layouts/page-hero"
 import { PageWrapper } from "@/components/layouts/page-wrapper"
 import Contact from "@/components/contact-simple"
+import { ContactInfoCards } from "@/components/contact/contact-info-cards"
+import { OfficeLocations } from "@/components/contact/office-locations"
+import { SocialMediaLinks } from "@/components/contact/social-media-links"
+import { ContactFAQ } from "@/components/contact/contact-faq"
 import Footer from "@/components/footer-simple"
 
 export const metadata: Metadata = {
   title: "Contact Us | M.I Resource Services Ltd",
-  description: "Get in touch with M.I Resource Services Ltd. We're here to support your Oil & Gas operations.",
+  description: "Get in touch with M.I Resource Services Ltd. We're here to support your Oil & Gas operations. Visit our offices in Lagos and Port Harcourt.",
+  openGraph: {
+    title: "Contact Us | M.I Resource Services Ltd",
+    description: "Get in touch with Nigeria's leading Oil & Gas support services provider",
+    images: ["/MIResourcesLogo.png"],
+  },
 }
 
 export default function ContactPage() {
@@ -19,7 +28,11 @@ export default function ContactPage() {
         subtitle="Let's discuss how we can support your operations"
         backgroundImage="/landscape-port-operations.jpg"
       />
+      <ContactInfoCards />
       <Contact />
+      <OfficeLocations />
+      <SocialMediaLinks />
+      <ContactFAQ />
       <Footer />
     </PageWrapper>
   )
