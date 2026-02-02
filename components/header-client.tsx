@@ -178,12 +178,12 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
                           onMouseLeave={() => setServicesDropdownOpen(false)}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[900px] bg-card border border-border rounded-xl shadow-2xl overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[1100px] bg-card border border-border rounded-xl shadow-2xl overflow-hidden"
                         >
                           <div className="flex">
                             {/* Left Side - Service Icons Grid */}
-                            <div className="w-1/3 bg-muted/30 border-r border-border p-6">
-                              <div className="grid grid-cols-2 gap-3">
+                            <div className="w-1/3 bg-muted/30 border-r border-border p-8">
+                              <div className="grid grid-cols-2 gap-4">
                                 {servicesMenu.items.map((service, idx) => {
                                   const IconComponent = service.icon
                                   return (
@@ -194,17 +194,17 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                                         window.location.href = service.href
                                         setServicesDropdownOpen(false)
                                       }}
-                                      className={`p-4 rounded-lg transition-all duration-200 text-left ${
+                                      className={`p-5 rounded-lg transition-all duration-200 text-left ${
                                         hoveredService === idx
                                           ? 'bg-primary/10 border-primary/40'
                                           : 'bg-background/50 border-transparent hover:bg-background'
                                       } border`}
                                     >
                                       <IconComponent 
-                                        size={24} 
-                                        className={`mb-2 ${hoveredService === idx ? 'text-primary' : 'text-muted-foreground'}`}
+                                        size={28} 
+                                        className={`mb-3 ${hoveredService === idx ? 'text-primary' : 'text-muted-foreground'}`}
                                       />
-                                      <div className={`text-xs font-medium ${hoveredService === idx ? 'text-primary' : 'text-foreground'}`}>
+                                      <div className={`text-sm font-medium ${hoveredService === idx ? 'text-primary' : 'text-foreground'}`}>
                                         {service.title}
                                       </div>
                                     </motion.button>
@@ -214,7 +214,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                             </div>
 
                             {/* Right Side - Subcategories */}
-                            <div className="w-2/3 p-6">
+                            <div className="w-2/3 p-8">
                               <AnimatePresence mode="wait">
                                 <motion.div
                                   key={hoveredService}
@@ -233,7 +233,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                                     </h3>
                                   </div>
                                   
-                                  <div className="grid grid-cols-2 gap-3">
+                                  <div className="grid grid-cols-2 gap-4">
                                     {servicesMenu.items[hoveredService].subcategories.map((sub, subIdx) => (
                                       <motion.a
                                         key={subIdx}
