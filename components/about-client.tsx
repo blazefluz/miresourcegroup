@@ -13,7 +13,22 @@ import {
   Shield, 
   TrendingUp, 
   Heart, 
-  Globe 
+  Globe,
+  Wrench,
+  Truck,
+  Package,
+  Building2,
+  Handshake,
+  Factory,
+  Gauge,
+  Lightbulb,
+  CheckCircle2,
+  Rocket,
+  Sparkles,
+  Crown,
+  Star,
+  Gem,
+  BadgeCheck
 } from 'lucide-react'
 import { AboutContent } from '@/types/sanity'
 
@@ -33,6 +48,21 @@ const iconMap = {
   'trending-up': TrendingUp,
   heart: Heart,
   globe: Globe,
+  wrench: Wrench,
+  truck: Truck,
+  package: Package,
+  building: Building2,
+  handshake: Handshake,
+  factory: Factory,
+  gauge: Gauge,
+  lightbulb: Lightbulb,
+  check: CheckCircle2,
+  rocket: Rocket,
+  sparkles: Sparkles,
+  crown: Crown,
+  star: Star,
+  gem: Gem,
+  badge: BadgeCheck
 }
 
 export function AboutClient({ content }: AboutClientProps) {
@@ -44,8 +74,6 @@ export function AboutClient({ content }: AboutClientProps) {
     headline,
     highlightedText,
     description,
-    ctaText,
-    ctaUrl,
     features,
   } = content
 
@@ -66,102 +94,79 @@ export function AboutClient({ content }: AboutClientProps) {
   }
 
   return (
-    <section id="about" className="py-24 relative" ref={ref}>
+    <section id="about" className="py-24 bg-secondary/30" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
-          >
-            {badgeText && (
-              <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-                {badgeText}
-              </span>
-            )}
-            
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-balance">
-              {renderHeadline()}
-            </h2>
-            
-            <div className="mt-6 text-lg text-muted-foreground leading-relaxed prose prose-invert max-w-none">
-              <PortableText
-                value={description}
-                components={{
-                  block: {
-                    normal: ({ children }) => <p className="mt-4 first:mt-0">{children}</p>,
-                  },
-                  marks: {
-                    strong: ({ children }) => (
-                      <strong className="font-bold text-foreground">{children}</strong>
-                    ),
-                    em: ({ children }) => <em className="italic">{children}</em>,
-                    link: ({ value, children }) => (
-                      <a
-                        href={value?.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
-                      >
-                        {children}
-                      </a>
-                    ),
-                  },
-                }}
-              />
-            </div>
-
-            {ctaText && ctaUrl && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-8"
-              >
-                <a
-                  href={ctaUrl}
-                  className="inline-flex items-center gap-2 text-primary font-semibold hover:underline underline-offset-4"
-                >
-                  {ctaText}
-                  <span className="text-xl">→</span>
-                </a>
-              </motion.div>
-            )}
-          </motion.div>
-
-          {/* Right Content - Feature Grid */}
-          <div className={`grid gap-6 ${
-            features && features.length <= 2 
-              ? 'grid-cols-1' 
-              : features && features.length <= 4 
-                ? 'sm:grid-cols-2' 
-                : 'sm:grid-cols-2 lg:grid-cols-3'
-          }`}>
-            {features?.map((feature, index) => {
-              const IconComponent = iconMap[feature.icon] || Target
-              
-              return (
-                <motion.div
-                  key={feature._key}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <IconComponent className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              )
-            })}
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          {badgeText && (
+            <span className="text-primary text-sm font-semibold tracking-wider uppercase">
+              {badgeText}
+            </span>
+          )}
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
+            {renderHeadline()}
+          </h2>
+          <div className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <PortableText
+              value={description}
+              components={{
+                block: {
+                  normal: ({ children }) => <p className="mt-4 first:mt-0">{children}</p>,
+                },
+                marks: {
+                  strong: ({ children }) => (
+                    <strong className="font-bold text-foreground">{children}</strong>
+                  ),
+                  em: ({ children }) => <em className="italic">{children}</em>,
+                },
+              }}
+            />
           </div>
+        </motion.div>
+
+        {/* Features Grid - Key Capabilities Style */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features?.map((feature, index) => {
+            const IconComponent = iconMap[feature.icon] || Target
+            
+            return (
+              <motion.div
+                key={feature._key}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative"
+              >
+                <div className="relative h-full p-8 bg-card rounded-2xl border border-border overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 mb-6">
+                      <IconComponent className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-foreground mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

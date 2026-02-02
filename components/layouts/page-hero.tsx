@@ -60,36 +60,30 @@ export function PageHero({
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-3xl"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
-            <span className="bg-linear-to-r from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent">
-              {title}
-            </span>
+          {/* Main title */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight tracking-tight">
+            {title}
           </h1>
+
+          {/* Subtitle */}
           {subtitle && (
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground leading-relaxed"
             >
               {subtitle}
             </motion.p>
           )}
         </motion.div>
-
-        {/* Decorative line */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 mx-auto w-24 h-1 bg-linear-to-r from-transparent via-primary to-transparent"
-        />
       </div>
     </section>
   )

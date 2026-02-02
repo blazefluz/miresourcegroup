@@ -29,10 +29,9 @@ export default function ContactPage() {
         backgroundImage="/landscape-port-operations.jpg"
       />
       <Contact />
-      <ContactInfoCards />
       <OfficeLocations />
-      <SocialMediaLinks />
       <ContactFAQ />
+      <SocialMediaLinks />
       <Footer />
     </PageWrapper>
   )

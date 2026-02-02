@@ -15,79 +15,79 @@ const servicesMenu = {
     {
       icon: Wrench,
       title: "Engineering Services",
-      href: "/services/engineering",
+      href: "/services",
       subcategories: [
-        { name: "Mechanical & Civil Works", href: "/services/engineering/mechanical-civil" },
-        { name: "Fabrication & Instrumentation", href: "/services/engineering/fabrication" },
-        { name: "Oil Field Services", href: "/services/engineering/oilfield" },
-        { name: "Structural Engineering", href: "/services/engineering/structural" },
-        { name: "Electrical & Instrumentation", href: "/services/engineering/electrical" },
-        { name: "Welding Services", href: "/services/engineering/welding" },
+        { name: "Mechanical & Civil Works", href: "/services" },
+        { name: "Fabrication & Instrumentation", href: "/services" },
+        { name: "Oil Field Services", href: "/services" },
+        { name: "Structural Engineering", href: "/services" },
+        { name: "Electrical & Instrumentation", href: "/services" },
+        { name: "Welding Services", href: "/services" },
       ]
     },
     {
       icon: Package,
       title: "Procurement Services",
-      href: "/services/procurement",
+      href: "/services",
       subcategories: [
-        { name: "Equipment & Material Supply", href: "/services/procurement/equipment" },
-        { name: "Petroleum Products & Lubricants", href: "/services/procurement/petroleum" },
-        { name: "Marine & Oil Tools", href: "/services/procurement/marine-tools" },
-        { name: "PPE & Safety Equipment", href: "/services/procurement/safety" },
-        { name: "Valves, Fittings & Pipes", href: "/services/procurement/valves-fittings" },
-        { name: "Chandelling Services", href: "/services/procurement/chandelling" },
+        { name: "Equipment & Material Supply", href: "/services" },
+        { name: "Petroleum Products & Lubricants", href: "/services" },
+        { name: "Marine & Oil Tools", href: "/services" },
+        { name: "PPE & Safety Equipment", href: "/services" },
+        { name: "Valves, Fittings & Pipes", href: "/services" },
+        { name: "Chandelling Services", href: "/services" },
       ]
     },
     {
       icon: BarChart3,
       title: "Supply Chain Management",
-      href: "/services/supply-chain",
+      href: "/services",
       subcategories: [
-        { name: "Production Management", href: "/services/supply-chain/production" },
-        { name: "Distribution & Deliveries", href: "/services/supply-chain/distribution" },
-        { name: "Quality Inspection", href: "/services/supply-chain/quality" },
-        { name: "Inventory Management", href: "/services/supply-chain/inventory" },
-        { name: "Warehousing Solutions", href: "/services/supply-chain/warehousing" },
-        { name: "Material Dispatch", href: "/services/supply-chain/dispatch" },
+        { name: "Production Management", href: "/services" },
+        { name: "Distribution & Deliveries", href: "/services" },
+        { name: "Quality Inspection", href: "/services" },
+        { name: "Inventory Management", href: "/services" },
+        { name: "Warehousing Solutions", href: "/services" },
+        { name: "Material Dispatch", href: "/services" },
       ]
     },
     {
       icon: Truck,
       title: "Logistics Services",
-      href: "/services/logistics",
+      href: "/services",
       subcategories: [
-        { name: "Material Transportation", href: "/services/logistics/transportation" },
-        { name: "Heavy Equipment Haulage", href: "/services/logistics/heavy-equipment" },
-        { name: "Freight Management", href: "/services/logistics/freight" },
-        { name: "Last Mile Delivery", href: "/services/logistics/delivery" },
-        { name: "Fleet Management", href: "/services/logistics/fleet" },
-        { name: "Customs Clearance", href: "/services/logistics/customs" },
+        { name: "Material Transportation", href: "/services" },
+        { name: "Heavy Equipment Haulage", href: "/services" },
+        { name: "Freight Management", href: "/services" },
+        { name: "Last Mile Delivery", href: "/services" },
+        { name: "Fleet Management", href: "/services" },
+        { name: "Customs Clearance", href: "/services" },
       ]
     },
     {
       icon: Lightbulb,
       title: "Management Services",
-      href: "/services/management",
+      href: "/services",
       subcategories: [
-        { name: "Business Administration", href: "/services/management/business-admin" },
-        { name: "Project Management", href: "/services/management/project" },
-        { name: "Environmental Management", href: "/services/management/environmental" },
-        { name: "Human Resource Management", href: "/services/management/hr" },
-        { name: "Industrial Management", href: "/services/management/industrial" },
-        { name: "Strategic Planning", href: "/services/management/strategic" },
+        { name: "Business Administration", href: "/services" },
+        { name: "Project Management", href: "/services" },
+        { name: "Environmental Management", href: "/services" },
+        { name: "Human Resource Management", href: "/services" },
+        { name: "Industrial Management", href: "/services" },
+        { name: "Strategic Planning", href: "/services" },
       ]
     },
     {
       icon: Headphones,
       title: "Construction & Maintenance",
-      href: "/services/construction",
+      href: "/services",
       subcategories: [
-        { name: "Heavy Civil Construction", href: "/services/construction/civil" },
-        { name: "Road Works & Maintenance", href: "/services/construction/roads" },
-        { name: "Commercial Construction", href: "/services/construction/commercial" },
-        { name: "Industrial Construction", href: "/services/construction/industrial" },
-        { name: "Equipment Maintenance", href: "/services/construction/maintenance" },
-        { name: "Turnkey Solutions", href: "/services/construction/turnkey" },
+        { name: "Heavy Civil Construction", href: "/services" },
+        { name: "Road Works & Maintenance", href: "/services" },
+        { name: "Commercial Construction", href: "/services" },
+        { name: "Industrial Construction", href: "/services" },
+        { name: "Equipment Maintenance", href: "/services" },
+        { name: "Turnkey Solutions", href: "/services" },
       ]
     },
   ]
@@ -246,7 +246,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                                         {servicesMenu.items[hoveredService].title}
                                       </h4>
                                     </div>
-                                    <div className="h-px bg-gradient-to-r from-primary/50 to-transparent" />
+                                    <div className="h-px bg-linear-to-r from-primary/50 to-transparent" />
                                   </div>
 
                                   {/* Subcategories List */}
@@ -270,11 +270,11 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                                   {/* View Category Link */}
                                   <div className="mt-6 pt-4 border-t border-border">
                                     <a
-                                      href={servicesMenu.items[hoveredService].href}
+                                      href="/services"
                                       onClick={() => setServicesDropdownOpen(false)}
                                       className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                                     >
-                                      View all {servicesMenu.items[hoveredService].title.toLowerCase()}
+                                      View all services
                                       <ChevronDown size={14} className="-rotate-90" />
                                     </a>
                                   </div>

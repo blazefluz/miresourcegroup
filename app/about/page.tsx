@@ -27,12 +27,12 @@ export default function AboutPage() {
         backgroundImage="/panoramic-shot-oil-rigs-sea-with-beautiful-sunset.jpg"
       />
       <About />
-      <MissionVision />
-      <CoreValues />
-      <KeyCapabilities />
       <CompanyStats />
-      <TeamShowcase />
+      <MissionVision />
+      <KeyCapabilities />
       <CompanyTimeline />
+      <CoreValues />
+      <TeamShowcase />
       <CTASection />
       <Footer />
     </PageWrapper>

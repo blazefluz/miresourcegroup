@@ -9,34 +9,51 @@ export function MissionVision() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="py-24 bg-background" ref={ref}>
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-12">
+    <section className="py-24 bg-background relative overflow-hidden" ref={ref}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-linear-to-b from-secondary/20 via-transparent to-transparent" />
+      
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Mission */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="space-y-6"
           >
-            <div className="p-8 bg-card rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-primary" />
-              </div>
-              
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Our <span className="text-primary">Mission</span>
-              </h2>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                To provide world-class support services to Nigeria's Oil & Gas industry through 
-                innovative solutions, exceptional quality, and unwavering commitment to safety and 
-                environmental responsibility. We strive to be the preferred partner for companies 
-                seeking reliable, efficient, and cost-effective solutions.
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary/10 rounded-full">
+              <Target className="w-5 h-5 text-primary" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                Our Mission
+              </span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+              Driving Excellence in{" "}
+              <span className="text-primary">Oil & Gas Services</span>
+            </h2>
+            
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                To apply the best practices and tools in the delivery of our services, 
+                support and drive client initiatives to enhance a conducive operating environment.
               </p>
+              <p>
+                We maintain emergency response capability to react quickly and effectively 
+                against deviations, ensuring operational continuity and excellence.
+              </p>
+            </div>
 
-              {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl" />
+            <div className="flex gap-4 pt-4">
+              <div className="flex-1 p-4 bg-card rounded-xl border border-border">
+                <div className="text-3xl font-bold text-primary mb-1">ISO 9001</div>
+                <div className="text-sm text-muted-foreground">Certified Quality</div>
+              </div>
+              <div className="flex-1 p-4 bg-card rounded-xl border border-border">
+                <div className="text-3xl font-bold text-primary mb-1">15+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
             </div>
           </motion.div>
 
@@ -45,26 +62,36 @@ export function MissionVision() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="space-y-6"
           >
-            <div className="p-8 bg-card rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <Eye className="w-8 h-8 text-primary" />
-              </div>
-              
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Our <span className="text-primary">Vision</span>
-              </h2>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                To be recognized as the leading indigenous support services provider in Nigeria's 
-                Oil & Gas sector, setting industry standards for excellence, innovation, and 
-                sustainability. We envision a future where our expertise and dedication contribute 
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary/10 rounded-full">
+              <Eye className="w-5 h-5 text-primary" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                Our Vision
+              </span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+              Leading Engineering Services in{" "}
+              <span className="text-primary">Africa</span>
+            </h2>
+            
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                To be the leading engineering and support services provider in Africa, 
+                setting industry standards for excellence, innovation, and sustainability.
+              </p>
+              <p>
+                We envision a future where our expertise and dedication contribute 
                 significantly to Nigeria's energy sector growth and development.
               </p>
+            </div>
 
-              {/* Decorative element */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl" />
+            <div className="p-6 bg-primary/5 rounded-2xl border-l-4 border-primary">
+              <p className="text-foreground font-medium italic">
+                "Our staff are our most important asset and we will not compromise 
+                our safety standards to achieve other corporate goals."
+              </p>
             </div>
           </motion.div>
         </div>

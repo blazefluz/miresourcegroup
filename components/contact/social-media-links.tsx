@@ -42,7 +42,7 @@ export function SocialMediaLinks() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="py-16 bg-secondary/30" ref={ref}>
+    <section className="py-16 bg-background" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -50,14 +50,14 @@ export function SocialMediaLinks() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-foreground mb-4">
+          <h3 className="text-xl font-bold text-foreground mb-3">
             Connect With Us
           </h3>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-6 text-sm">
             Follow us on social media for updates and industry insights
           </p>
 
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-3 flex-wrap">
             {socialLinks.map((social, index) => {
               const IconComponent = social.icon
               
@@ -69,13 +69,13 @@ export function SocialMediaLinks() {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-14 h-14 rounded-xl bg-card border border-border flex items-center justify-center transition-all duration-300 ${social.color} hover:text-white hover:border-transparent group`}
+                  className={`w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center transition-all duration-300 ${social.color} hover:text-white hover:border-transparent group`}
                   aria-label={social.name}
                 >
-                  <IconComponent className="w-6 h-6 text-foreground group-hover:text-white transition-colors" />
+                  <IconComponent className="w-5 h-5 text-foreground group-hover:text-white transition-colors" />
                 </motion.a>
               )
             })}

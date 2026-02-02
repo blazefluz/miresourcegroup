@@ -7,33 +7,33 @@ import { Shield, Users, Lightbulb, Award, Heart, Zap } from "lucide-react"
 const values = [
   {
     icon: Shield,
-    title: "Safety First",
-    description: "Uncompromising commitment to health, safety, and environmental protection in all operations"
-  },
-  {
-    icon: Award,
-    title: "Excellence",
-    description: "Delivering superior quality and exceeding expectations in every project we undertake"
+    title: "Health, Safety & Environment",
+    description: "The health, welfare and safety of our staff, contractors and the general public. We are committed to a safe operating environment and protection of environment quality.",
+    color: "bg-blue-500"
   },
   {
     icon: Users,
-    title: "Teamwork",
-    description: "Fostering collaboration and partnership with clients, employees, and stakeholders"
+    title: "Our People First",
+    description: "Our staff are our most important asset and we will not compromise our safety standards to achieve other corporate goals.",
+    color: "bg-green-500"
   },
   {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "Embracing new technologies and creative solutions to solve complex challenges"
+    icon: Award,
+    title: "Regulatory Excellence",
+    description: "We strive to meet or exceed regulatory compliance, industry codes, guidelines and practices in all our operations.",
+    color: "bg-purple-500"
+  },
+  {
+    icon: Shield,
+    title: "Injury & Damage Prevention",
+    description: "We strive to prevent injury to staff and damage to equipment, material and the environment through proactive measures.",
+    color: "bg-orange-500"
   },
   {
     icon: Heart,
-    title: "Integrity",
-    description: "Conducting business with honesty, transparency, and ethical practices"
-  },
-  {
-    icon: Zap,
-    title: "Efficiency",
-    description: "Optimizing processes and resources to deliver cost-effective solutions"
+    title: "Social Responsibility",
+    description: "Maintaining high standards of environment, health and safety performance consistent with the well-being of society.",
+    color: "bg-red-500"
   }
 ]
 
@@ -42,7 +42,7 @@ export function CoreValues() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="py-24 bg-secondary/30" ref={ref}>
+    <section className="py-24 bg-background" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -51,40 +51,41 @@ export function CoreValues() {
           className="text-center mb-16"
         >
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Our Values
+            Core Values & Principles
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            What We <span className="text-primary">Stand For</span>
+            Our Commitment to <span className="text-primary">Excellence</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-            The principles that guide our decisions and define our company culture
+            The principles that guide every decision we make and define our company culture
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto space-y-6">
           {values.map((value, index) => {
             const IconComponent = value.icon
             
             return (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, x: -50 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="h-full p-8 bg-card rounded-2xl border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-500">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 mb-6">
-                    <IconComponent className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                <div className="flex gap-6 p-6 bg-card rounded-2xl border border-border hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                  <div className={`shrink-0 w-14 h-14 rounded-xl ${value.color} flex items-center justify-center`}>
+                    <IconComponent className="w-7 h-7 text-white" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {value.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      {value.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             )

@@ -2,43 +2,43 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Award, Building2, Handshake, Package, Truck, Wrench } from "lucide-react"
+import { Shield, Zap, Target, Users, Gauge, Lightbulb } from "lucide-react"
 
 const capabilities = [
   {
-    icon: Award,
-    title: "ISO 9001 Certified",
-    description: "We have adopted international ISO:9001 standards as our standard for quality management and assurance.",
+    icon: Shield,
+    title: "Zero Accident Philosophy",
+    description: "All accidents are preventable. We maintain the highest safety standards with comprehensive orientation courses and strict adherence to safety protocols.",
     color: "text-blue-500"
   },
   {
-    icon: Building2,
-    title: "Indigenous Company",
-    description: "Privately owned Nigerian company with deep understanding of local market dynamics.",
-    color: "text-green-500"
+    icon: Zap,
+    title: "Emergency Response Ready",
+    description: "Maintaining emergency response capability to react quickly and effectively against deviations, ensuring operational continuity.",
+    color: "text-amber-500"
   },
   {
-    icon: Handshake,
-    title: "Strategic Alliances",
-    description: "Collaborating alliances with specialized companies to deliver comprehensive solutions.",
+    icon: Target,
+    title: "7 Rs of Logistics",
+    description: "Right product, right customer, right quantity, right condition, right place, right time, right cost - our logistics excellence framework.",
     color: "text-purple-500"
   },
   {
-    icon: Package,
-    title: "Turnkey Solutions",
-    description: "Complete project management from design to delivery, ensuring execution costs meet budgets.",
-    color: "text-orange-500"
+    icon: Users,
+    title: "Kaizen Methodology",
+    description: "Continuous improvement ideology that proactively enhances supply chain efficiency and reduces deviations to industry minimums.",
+    color: "text-green-500"
   },
   {
-    icon: Wrench,
-    title: "Heavy Construction Equipment",
-    description: "Excavators, CAT 966C Wheel Loaders, and specialized construction machinery for large-scale projects.",
+    icon: Gauge,
+    title: "Multi-Disciplinary Expertise",
+    description: "Comprehensive engineering resources covering Civil, Mechanical, Fabrication, Structural, Electrical and Instrumentation disciplines.",
     color: "text-red-500"
   },
   {
-    icon: Truck,
-    title: "Transportation Fleet",
-    description: "Toyota Hilux trucks, Hiace buses, self-loader trucks, and specialized trailers for logistics operations.",
+    icon: Lightbulb,
+    title: "Global Standards, Local Insight",
+    description: "International best practices combined with deep understanding of Nigerian market dynamics and regulatory compliance.",
     color: "text-indigo-500"
   }
 ]
@@ -58,13 +58,13 @@ export function KeyCapabilities() {
           className="text-center mb-16"
         >
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Our Capabilities
+            Operational Excellence
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            What Sets Us <span className="text-primary">Apart</span>
+            Our Competitive <span className="text-primary">Advantages</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Combining international standards with local expertise to deliver exceptional results
+            Delivering excellence through proven methodologies, safety-first culture, and continuous improvement
           </p>
         </motion.div>
 
