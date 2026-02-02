@@ -2,13 +2,15 @@ import { Metadata } from "next"
 import Header from "@/components/header-simple"
 import { PageHero } from "@/components/layouts/page-hero"
 import { PageWrapper } from "@/components/layouts/page-wrapper"
-import Services from "@/components/services-simple"
+import { ServiceDetails } from "@/components/services/service-details"
+import { WhyChooseUs } from "@/components/services/why-choose-us"
+import { ServiceApproach } from "@/components/services/service-approach"
 import { CTASection } from "@/components/home/cta-section"
 import Footer from "@/components/footer-simple"
 
 export const metadata: Metadata = {
   title: "Our Services | M.I Resource Services Ltd",
-  description: "Comprehensive Oil & Gas support services including Engineering, Procurement, Supply Chain Management, and more.",
+  description: "Comprehensive Oil & Gas support services including Engineering, Procurement, Supply Chain Management, Logistics, Management Services, and Construction & Maintenance.",
 }
 
 export default function ServicesPage() {
@@ -20,7 +22,9 @@ export default function ServicesPage() {
         subtitle="Comprehensive support services for Nigeria's Oil & Gas industry"
         backgroundImage="/view-male-engineer-work-engineers-day-celebration.jpg"
       />
-      <Services />
+      <ServiceDetails />
+      <WhyChooseUs />
+      <ServiceApproach />
       <CTASection />
       <Footer />
     </PageWrapper>

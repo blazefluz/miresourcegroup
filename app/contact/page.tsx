@@ -24,7 +24,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact Us"
         subtitle="Let's discuss how we can support your operations"
-        backgroundImage="/landscape-port-operations.jpg"
+        backgroundImage="/oil-rig-industrial-silhouette-dark-moody.jpg"
       />
       <Contact />
       <OfficeLocations />

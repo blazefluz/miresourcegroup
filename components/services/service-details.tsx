@@ -1,0 +1,271 @@
+"use client"
+
+import { motion, useInView } from "framer-motion"
+import { useRef, useState } from "react"
+import Image from "next/image"
+import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight } from "lucide-react"
+
+const services = [
+  {
+    icon: Wrench,
+    title: "Engineering Services",
+    tagline: "Comprehensive engineering solutions across multiple disciplines",
+    description: "M.I Resources has comprehensive engineering resources covering a wide expanse of disciplines and work-projects in Civil, Mechanical, Fabrication and Structural Engineering. Our teams are supported by the latest technology and software in engineering and structural design.",
+    features: [
+      "Civil Engineering Design - Heavy Civil Construction, Road Works, Commercial & Industrial",
+      "Mechanical & Fabrication - Deck Extensions, Subsea Templates, Masts & Substructures",
+      "Welding Services - Large/Small Bore Piping (Stainless Steel, Carbon, Duplex)",
+      "Electrical & Instrumentation, Mud Systems, Drilling Structures",
+      "Oil Field Services with latest technology support",
+      "Welding Processes: SMAW, Orbital, TIG, SAW"
+    ],
+    image: "/portrait-native-american-engineer-technician-wearing-safty-uniform-hand-contril-automation-robot-arm-welding-machine-with-laptop-industrial-40-factory-background-concept.jpg",
+    color: "text-blue-500",
+    bgColor: "bg-blue-500"
+  },
+  {
+    icon: Package,
+    title: "Procurement Services",
+    tagline: "Strategic sourcing and procurement solutions",
+    description: "We deliver proven procurement strategies and solutions which holistically reduce supply chain costs and deliver high-quality materials that meet your specific requirements. Our deep network of alliances across the globe ensures access to the right sources.",
+    features: [
+      "Petroleum Products & Lubricants, Oil Filters, Consumables",
+      "Marine & Oil Tools, PPE & Safety Equipment",
+      "Valves, Fittings, Pipes, Bolts & Nuts, Electrical & Lighting",
+      "Office/Industrial Equipment & Fittings",
+      "Authorized OEM Distributors & Third-Party Quality Inspectors",
+      "Global Sourcing Network with Freight Forwarders"
+    ],
+    image: "/warehouse-manager-walking-through-large-storage-area-holding-tablet-while-forklift-operating-background.jpg",
+    color: "text-green-500",
+    bgColor: "bg-green-500"
+  },
+  {
+    icon: BarChart3,
+    title: "Supply Chain Management",
+    tagline: "End-to-end supply chain optimization",
+    description: "Our Supply Chain Management team possesses adequate logistics intervention with a well-tailored system. We operate the Kaizen-style ideology which seeks proactive measures to continually improve the supply chain and reduce deviations to industry minimums.",
+    features: [
+      "Professional Inspection Services - Client Specification Conformance",
+      "Production Management - Timely & Effective Flow of Goods",
+      "7 Rs of Logistics: Right Product, Customer, Quantity, Condition, Place, Time, Cost",
+      "Distribution & Delivery - End-to-End Tracking",
+      "Material Conveyance from Point of Purchase to End User",
+      "Kaizen Continuous Improvement Methodology"
+    ],
+    image: "/black-team-manufacturing-plant-employees-fixing-errors-debugging.jpg",
+    color: "text-purple-500",
+    bgColor: "bg-purple-500"
+  },
+  {
+    icon: Truck,
+    title: "Logistics Services",
+    tagline: "Comprehensive logistics and transportation solutions",
+    description: "Our logistics services ensure getting the right product to the right customer, in the right quantity, in the right condition, at the right place, at the right time, and at the right cost. We operate the 7 Rs of logistics framework.",
+    features: [
+      "Transportation Fleet: Toyota Hilux Trucks, Hiace Buses, Self Loader Trucks (8 Tons)",
+      "Heavy Haulage: Low Boy Mark Trailers, 20 Tons Dump Trucks",
+      "Support Services: 3000 GL Water Tankers, Light Vehicles",
+      "Material Distribution & Last Mile Delivery",
+      "24/7 Availability with Rapid Response Capability",
+      "Nationwide Coverage Across Nigeria"
+    ],
+    image: "/aerial-view-factory-trucks-parked-near-warehouse-daytime.jpg",
+    color: "text-orange-500",
+    bgColor: "bg-orange-500"
+  },
+  {
+    icon: Lightbulb,
+    title: "Management Services",
+    tagline: "Professional management and consulting services",
+    description: "M.I Resources offers business administration and management services for clients in both large and small-scale businesses. Our experienced project management team handles projects on large scale involving a diversity of disciplines with clear structure and progress tracking.",
+    features: [
+      "Project Management - Large-Scale Multi-Discipline Coordination",
+      "Business Administration - Process Optimization & Operational Management",
+      "Environmental Management - Compliance, Waste Management, Sustainability",
+      "Human Resources - Personnel Management, Training & Development",
+      "Strategic Planning & Budget Management",
+      "Clear Structure with Progress Monitoring"
+    ],
+    image: "/african-american-engineers-supervise-industrial-automation-system.jpg",
+    color: "text-indigo-500",
+    bgColor: "bg-indigo-500"
+  },
+  {
+    icon: HardHat,
+    title: "Construction & Maintenance",
+    tagline: "Turnkey construction and maintenance solutions",
+    description: "M.I Resources places all Construction and Engineering services under one roof, enabling our Group to improve its 'Turnkey' capability in infrastructure and industrial project implementation. We offer complete packages or customized groupings.",
+    features: [
+      "Heavy Construction: Excavators, CAT 966C Wheel Loaders, Concrete Mixers",
+      "Road Construction: Paver DYNAPAC F 12W, Vibrating Rollers DYNAPAC CP271",
+      "Welding & Fabrication: 6x Welding Machines 280-400AMP, On-Site Services",
+      "Maintenance Services: Preventive Maintenance, Equipment Servicing, Emergency Repairs",
+      "Turnkey or Customized Service Packages",
+      "Nationwide Deployment from Port Harcourt Base"
+    ],
+    image: "/african-american-worker-standing-uniform-wearing-safety-hat-factory.jpg",
+    color: "text-red-500",
+    bgColor: "bg-red-500"
+  }
+]
+
+export function ServiceDetails() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [activeTab, setActiveTab] = useState(0)
+
+  return (
+    <section className="py-24 bg-background" ref={ref}>
+      <div className="mx-auto max-w-7xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
+            Service Portfolio
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
+            Comprehensive <span className="text-primary">Solutions</span>
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+            Full-spectrum support services backed by experienced teams, modern equipment, and proven methodologies for Nigeria's Oil & Gas industry
+          </p>
+        </motion.div>
+
+        {/* Service Tabs */}
+        <div className="flex flex-wrap gap-3 mb-12 justify-center">
+          {services.map((service, index) => {
+            const IconComponent = service.icon
+            const isActive = activeTab === index
+            
+            return (
+              <motion.button
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  isActive
+                    ? `${service.bgColor} text-white shadow-lg`
+                    : 'bg-card text-foreground border border-border hover:border-primary/40'
+                }`}
+              >
+                <IconComponent className="w-5 h-5" />
+                <span className="hidden sm:inline">{service.title}</span>
+              </motion.button>
+            )
+          })}
+        </div>
+
+        {/* Service Content */}
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="bg-card rounded-3xl border border-border overflow-hidden"
+        >
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Left Column - Image */}
+            <div className="relative h-64 lg:h-auto min-h-[400px]">
+              <Image
+                src={services[activeTab].image}
+                alt={services[activeTab].title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
+              
+              {/* Icon Overlay */}
+              <div className="absolute bottom-6 left-6 lg:top-6 lg:bottom-auto">
+                {(() => {
+                  const IconComponent = services[activeTab].icon
+                  return (
+                    <div className={`w-16 h-16 rounded-2xl ${services[activeTab].bgColor} flex items-center justify-center shadow-2xl`}>
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                  )
+                })()}
+              </div>
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="p-8 lg:p-12 space-y-6">
+              <div>
+                <h3 className="text-3xl font-bold text-foreground mb-2">
+                  {services[activeTab].title}
+                </h3>
+                <p className={`text-sm font-semibold ${services[activeTab].color} mb-4`}>
+                  {services[activeTab].tagline}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {services[activeTab].description}
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">
+                  Key Capabilities & Features
+                </h4>
+                <div className="grid gap-3">
+                  {services[activeTab].features.map((feature, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: idx * 0.05 }}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle2 className={`w-5 h-5 ${services[activeTab].color} shrink-0 mt-0.5`} />
+                      <span className="text-sm text-muted-foreground leading-relaxed">
+                        {feature}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Request This Service
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom Info Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 p-6 bg-primary/5 rounded-2xl border border-primary/20"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h4 className="text-lg font-bold text-foreground mb-1">
+                Need a Custom Solution?
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                We offer turnkey packages or customized groupings of individual services tailored to your specific needs
+              </p>
+            </div>
+            <a
+              href="/contact"
+              className="shrink-0 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >
+              Discuss Your Project
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
