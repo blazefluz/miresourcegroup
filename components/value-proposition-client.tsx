@@ -59,7 +59,7 @@ export function ValuePropositionClient({ content }: ValuePropositionClientProps)
       const [assetId, dimensions, format] = ref.replace('image-', '').split('-')
       return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}-${dimensions}.${format}?w=600&h=600&fit=crop&auto=format`
     }
-    return '/industrial-team-engineers-working-oil-platform.jpg'
+    return '/three-factory-workers-safety-hats-discussing-manufacture-plan.jpg'
   }
 
   return (

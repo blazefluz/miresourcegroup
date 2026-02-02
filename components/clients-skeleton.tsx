@@ -10,7 +10,7 @@ export function ClientsSkeleton() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-12"
         >
           {/* Badge Skeleton */}
@@ -27,7 +27,7 @@ export function ClientsSkeleton() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="relative overflow-hidden"
         >
           {/* Gradient Overlays */}
@@ -48,7 +48,7 @@ export function ClientsSkeleton() {
                 key={`first-${index}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="flex-shrink-0 mx-8"
               >
                 <div className="w-32 h-16 sm:w-40 sm:h-20 bg-white rounded-2xl shadow-sm border border-border/20 animate-pulse" />
@@ -61,7 +61,7 @@ export function ClientsSkeleton() {
                 key={`second-${index}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: (index + 6) * 0.1 }}
+                transition={{ duration: 0.3, delay: (index + 6) * 0.05 }}
                 className="flex-shrink-0 mx-8"
               >
                 <div className="w-32 h-16 sm:w-40 sm:h-20 bg-white rounded-2xl shadow-sm border border-border/20 animate-pulse" />

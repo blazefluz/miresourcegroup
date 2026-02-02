@@ -138,8 +138,8 @@ export default function HeaderClient({ content }: HeaderClientProps) {
       <nav className="mx-auto max-w-7xl px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.a
-            href="#home"
-            className="flex items-center gap-3 text-2xl font-bold tracking-tight"
+            href="/"
+            className="flex items-center gap-3 text-3xl font-bold tracking-wide"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -147,7 +147,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
               <img 
                 src="/MIResourcesLogo.png" 
                 alt="M.I Resource Group Logo" 
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </div>
             <div>
@@ -274,7 +274,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                                       onClick={() => setServicesDropdownOpen(false)}
                                       className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                                     >
-                                      View all services
+                                      View {servicesMenu.items[hoveredService].title}
                                       <ChevronDown size={14} className="-rotate-90" />
                                     </a>
                                   </div>
