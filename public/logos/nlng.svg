@@ -1,0 +1,14 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#ffffff"/>
+  <rect x="80" y="60" width="80" height="80" fill="#006838" rx="8"/>
+  <text x="120" y="100" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFD100" text-anchor="middle" dominant-baseline="middle">
+    LNG
+  </text>
+  <path d="M 120 50 L 130 70 L 110 70 Z" fill="#0066B2"/>
+  <text x="240" y="85" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#0066B2" text-anchor="start">
+    Nigeria
+  </text>
+  <text x="240" y="115" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#0066B2" text-anchor="start">
+    LNG Limited
+  </text>
+</svg>

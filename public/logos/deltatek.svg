@@ -1,0 +1,11 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#ffffff"/>
+  <path d="M 120 60 L 180 100 L 120 140 Z" fill="#0066B2"/>
+  <path d="M 140 80 L 180 100 L 140 120 Z" fill="#ED1C24"/>
+  <text x="220" y="95" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#0066B2" text-anchor="start">
+    Deltatek
+  </text>
+  <text x="220" y="125" font-family="Arial, sans-serif" font-size="24" fill="#0066B2" text-anchor="start">
+    Offshore
+  </text>
+</svg>
