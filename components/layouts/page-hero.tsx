@@ -17,7 +17,7 @@ export function PageHero({
   overlayOpacity = 0.7 
 }: PageHeroProps) {
   return (
-    <section className="relative h-[60vh] min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[80vh] min-h-[600px] lg:min-h-[700px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

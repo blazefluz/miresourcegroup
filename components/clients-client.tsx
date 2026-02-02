@@ -102,7 +102,7 @@ export function ClientsClient({ content }: ClientsClientProps) {
                   whileHover={{ scale: 1.15 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <div className="relative w-44 h-22 sm:w-52 sm:h-26 flex items-center justify-center bg-white rounded-2xl shadow-sm border border-border/20">
+                  <div className="relative w-40 h-20 sm:w-52 sm:h-26 flex items-center justify-center bg-white rounded-2xl shadow-sm border border-border/20">
                     <Image
                       src={imageUrl}
                       alt={logo.altText}
@@ -128,7 +128,7 @@ export function ClientsClient({ content }: ClientsClientProps) {
                   whileHover={{ scale: 1.15 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <div className="relative w-44 h-22 sm:w-52 sm:h-26 flex items-center justify-center bg-white rounded-2xl shadow-sm border border-border/20">
+                  <div className="relative w-40 h-20 sm:w-52 sm:h-26 flex items-center justify-center bg-white rounded-2xl shadow-sm border border-border/20">
                     <Image
                       src={imageUrl}
                       alt={logo.altText}

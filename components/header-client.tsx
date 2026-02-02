@@ -190,14 +190,14 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
                           onMouseLeave={() => setServicesDropdownOpen(false)}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[900px] bg-card border border-border rounded-lg shadow-2xl overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-[60%] mt-2 w-[1200px] bg-card border border-border rounded-lg shadow-2xl overflow-hidden"
                         >
                           <div className="flex">
                             {/* Left Sidebar - Categories */}
-                            <div className="w-64 bg-muted/20 border-r border-border">
-                              <div className="p-4">
+                            <div className="w-80 bg-muted/20 border-r border-border">
+                              <div className="p-6">
                                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-3">
-                                  Service Categories
+                                  Services we offer
                                 </h3>
                                 <nav className="space-y-1">
                                   {servicesMenu.items.map((service, idx) => {
@@ -226,7 +226,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                             </div>
 
                             {/* Right Content - Subcategories */}
-                            <div className="flex-1 p-6">
+                            <div className="flex-1 p-8">
                               <AnimatePresence mode="wait">
                                 <motion.div
                                   key={hoveredService}
@@ -252,20 +252,18 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                                   {/* Subcategories List */}
                                   <div className="grid grid-cols-2 gap-x-6 gap-y-3">
                                     {servicesMenu.items[hoveredService].subcategories.map((sub, subIdx) => (
-                                      <motion.a
+                                      <motion.div
                                         key={subIdx}
-                                        href={sub.href}
                                         initial={{ opacity: 0, y: 5 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: subIdx * 0.03 }}
-                                        onClick={() => setServicesDropdownOpen(false)}
-                                        className="flex items-center gap-2.5 py-2 px-3 rounded-md hover:bg-muted/50 transition-colors group"
+                                        className="flex items-center gap-2.5 py-2 px-3"
                                       >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary group-hover:scale-125 transition-all" />
-                                        <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                                        <span className="text-sm text-muted-foreground">
                                           {sub.name}
                                         </span>
-                                      </motion.a>
+                                      </motion.div>
                                     ))}
                                   </div>
 
