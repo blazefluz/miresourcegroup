@@ -37,6 +37,14 @@ export async function getHeaderContent(): Promise<HeaderContent> {
       return placeholderHeaderContent
     }
 
+    // Filter out "Clients" link from navigation
+    if (content.navigation) {
+      content.navigation = content.navigation.filter((link: any) => 
+        link.name.toLowerCase() !== 'clients' && 
+        link.name.toLowerCase() !== 'our clients'
+      )
+    }
+
     return content
   } catch (error) {
     console.error('❌ Failed to fetch header content:', error)

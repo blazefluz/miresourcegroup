@@ -10,7 +10,7 @@ export function ServicesSkeleton() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center max-w-3xl mx-auto"
         >
           {/* Badge Skeleton */}
@@ -36,7 +36,7 @@ export function ServicesSkeleton() {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               className="group relative"
             >
               <div className="relative h-full p-8 bg-card rounded-3xl border border-border overflow-hidden">

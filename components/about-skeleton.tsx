@@ -11,7 +11,7 @@ export function AboutSkeleton() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
           >
             {/* Badge Skeleton */}
             <div className="w-32 h-4 bg-primary/30 rounded animate-pulse mb-4" />
@@ -44,7 +44,7 @@ export function AboutSkeleton() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
+                transition={{ duration: 0.3, delay: index * 0.08 }}
                 className="p-6 bg-card rounded-2xl border border-border"
               >
                 {/* Icon Skeleton */}

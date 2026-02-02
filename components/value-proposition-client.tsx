@@ -59,13 +59,13 @@ export function ValuePropositionClient({ content }: ValuePropositionClientProps)
       const [assetId, dimensions, format] = ref.replace('image-', '').split('-')
       return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}-${dimensions}.${format}?w=600&h=600&fit=crop&auto=format`
     }
-    return '/industrial-team-engineers-working-oil-platform.jpg'
+    return '/three-factory-workers-safety-hats-discussing-manufacture-plan.jpg'
   }
 
   return (
     <section id="why-us" className="py-24 relative overflow-hidden" ref={ref}>
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-primary/5 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -87,7 +87,7 @@ export function ValuePropositionClient({ content }: ValuePropositionClientProps)
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent" />
               </div>
 
               {/* Floating success card */}
@@ -151,7 +151,7 @@ export function ValuePropositionClient({ content }: ValuePropositionClientProps)
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     className="flex gap-4"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                       <IconComponent className="w-5 h-5 text-primary" />
                     </div>
                     <div>

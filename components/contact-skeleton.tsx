@@ -11,7 +11,7 @@ export function ContactSkeleton() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
           >
             {/* Badge Skeleton */}
             <div className="w-24 h-4 bg-primary/30 rounded animate-pulse mb-4" />
@@ -36,7 +36,7 @@ export function ContactSkeleton() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="flex items-center gap-4 p-4 bg-card rounded-2xl border border-border"
                 >
                   {/* Icon Skeleton */}
@@ -58,7 +58,7 @@ export function ContactSkeleton() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="bg-card rounded-3xl p-8 border border-border"
           >
             <div className="space-y-6">

@@ -5,6 +5,8 @@ export interface SanityImageAsset {
   asset: {
     _ref: string
     _type: 'reference'
+    _id?: string
+    url?: string
   }
   hotspot?: {
     x: number

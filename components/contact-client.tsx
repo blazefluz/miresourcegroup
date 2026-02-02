@@ -67,7 +67,7 @@ export default function ContactClient({ content }: ContactClientProps) {
             </div>
 
             <div className="mt-10 space-y-6">
-              {content.contactInfo.map((item, index) => {
+              {(content.contactInfo || []).map((item, index) => {
                 const IconComponent = iconMap[item.icon as keyof typeof iconMap] || Mail
                 return (
                   <motion.div
@@ -107,10 +107,10 @@ export default function ContactClient({ content }: ContactClientProps) {
                     <CheckCircle className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="mt-6 text-xl font-semibold text-foreground">
-                    {content.formSettings.successMessage.title}
+                    {content.formSettings?.successMessage?.title || 'Message Sent!'}
                   </h3>
                   <p className="mt-2 text-muted-foreground">
-                    {content.formSettings.successMessage.description}
+                    {content.formSettings?.successMessage?.description || 'Thank you for reaching out. We\'ll get back to you shortly.'}
                   </p>
                 </motion.div>
               ) : (
@@ -194,7 +194,7 @@ export default function ContactClient({ content }: ContactClientProps) {
                       </>
                     ) : (
                       <>
-                        {content.formSettings.submitButtonText}
+                        {content.formSettings?.submitButtonText || 'Send Message'}
                         <Send size={18} />
                       </>
                     )}

@@ -8,6 +8,7 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-heading" })
 const _geist = Geist({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://miresourcegroup.com'),
   title: "M.I Resource Group | Oil & Gas Support Services",
   description:
     "No.1 Support Services Provider in Nigeria's Oil & Gas Industry - Engineering, Procurement, Supply Chain Management",
@@ -20,6 +21,19 @@ export const metadata: Metadata = {
       },
     ],
     apple: "/MIResourcesLogo.png",
+  },
+  openGraph: {
+    title: "M.I Resource Group | Oil & Gas Support Services",
+    description: "No.1 Support Services Provider in Nigeria's Oil & Gas Industry",
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://miresourcegroup.com',
+    siteName: "M.I Resource Group",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "M.I Resource Group | Oil & Gas Support Services",
+    description: "No.1 Support Services Provider in Nigeria's Oil & Gas Industry",
   },
 }
 

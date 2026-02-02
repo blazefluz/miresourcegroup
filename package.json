@@ -11,7 +11,10 @@
     "studio:build": "sanity build",
     "studio:deploy": "sanity deploy",
     "test:sanity": "node scripts/test-sanity-setup.js",
-    "test:hero": "node -e \"require('./lib/test-hero-integration.ts').testHeroIntegration()\""
+    "test:hero": "node -e \"require('./lib/test-hero-integration.ts').testHeroIntegration()\"",
+    "pre-deploy": "node scripts/pre-deploy-check.js",
+    "check:content": "node scripts/sanity-content-summary.js",
+    "check:images": "node scripts/check-all-images.js"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

@@ -18,12 +18,14 @@ export function ClientsClient({ content }: ClientsClientProps) {
     badgeText,
     headline,
     highlightedText,
-    clientLogos,
+    clientLogos = [], // Provide default empty array
     animationSettings
   } = content
 
   // Sort logos by order
-  const sortedLogos = [...clientLogos].sort((a, b) => a.order - b.order)
+  const sortedLogos = (clientLogos && Array.isArray(clientLogos)) 
+    ? [...clientLogos].sort((a, b) => a.order - b.order)
+    : []
 
   // Create headline with highlighted text
   const renderHeadline = () => {
@@ -68,44 +70,47 @@ export function ClientsClient({ content }: ClientsClientProps) {
         )}
 
         {/* Scrolling Logos Container */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative overflow-hidden"
-        >
-          {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+        {sortedLogos.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative overflow-hidden"
+          >
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-linear-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-linear-to-l from-background to-transparent z-10" />
 
           {/* Scrolling Container */}
           <div 
-            className={`flex items-center ${pauseOnHover ? 'hover:[animation-play-state:paused]' : ''}`}
+            className={`flex items-center clients-scroll ${pauseOnHover ? 'hover:paused' : ''}`}
             style={{
-              animation: `scroll-left ${scrollSpeed}s linear infinite`,
+              '--scroll-speed-mobile': `${Math.max(scrollSpeed * 0.5, 20)}s`,
+              '--scroll-speed-tablet': `${Math.max(scrollSpeed * 0.8, 35)}s`,
+              '--scroll-speed-desktop': `${Math.max(scrollSpeed, 50)}s`,
               width: 'fit-content'
-            }}
+            } as React.CSSProperties}
           >
             {/* First set of logos */}
             {sortedLogos.map((logo) => {
               const imageUrl = logo.logo?.asset?.url 
-                ? getOptimizedImageUrl(logo.logo, { width: 200, height: 100, format: 'webp' })
+                ? getOptimizedImageUrl(logo.logo, { width: 280, height: 140, format: 'webp' })
                 : '/placeholder-logo.svg'
 
               return (
                 <motion.div
                   key={`first-${logo._key}`}
-                  className="flex-shrink-0 mx-8 group cursor-default"
+                  className="shrink-0 mx-4 sm:mx-6 lg:mx-8 group cursor-default"
                   whileHover={{ scale: 1.15 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <div className="relative w-32 h-16 sm:w-40 sm:h-20 flex items-center justify-center bg-white rounded-2xl shadow-sm border border-border/20">
+                  <div className="relative w-28 h-14 sm:w-40 sm:h-20 lg:w-52 lg:h-26 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl shadow-sm border border-border/20">
                     <Image
                       src={imageUrl}
                       alt={logo.altText}
                       fill
                       className="object-contain transition-all duration-300 p-3"
-                      sizes="(max-width: 640px) 128px, 160px"
+                      sizes="(max-width: 640px) 176px, 208px"
                     />
                   </div>
                 </motion.div>
@@ -115,23 +120,23 @@ export function ClientsClient({ content }: ClientsClientProps) {
             {/* Duplicate set for seamless loop */}
             {sortedLogos.map((logo) => {
               const imageUrl = logo.logo?.asset?.url 
-                ? getOptimizedImageUrl(logo.logo, { width: 200, height: 100, format: 'webp' })
+                ? getOptimizedImageUrl(logo.logo, { width: 280, height: 140, format: 'webp' })
                 : '/placeholder-logo.svg'
 
               return (
                 <motion.div
                   key={`second-${logo._key}`}
-                  className="flex-shrink-0 mx-8 group cursor-default"
+                  className="shrink-0 mx-4 sm:mx-6 lg:mx-8 group cursor-default"
                   whileHover={{ scale: 1.15 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <div className="relative w-32 h-16 sm:w-40 sm:h-20 flex items-center justify-center bg-white rounded-2xl shadow-sm border border-border/20">
+                  <div className="relative w-28 h-14 sm:w-40 sm:h-20 lg:w-52 lg:h-26 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl shadow-sm border border-border/20">
                     <Image
                       src={imageUrl}
                       alt={logo.altText}
                       fill
                       className="object-contain transition-all duration-300 p-3"
-                      sizes="(max-width: 640px) 128px, 160px"
+                      sizes="(max-width: 640px) 112px, (max-width: 1024px) 160px, 208px"
                     />
                   </div>
                 </motion.div>
@@ -139,16 +144,33 @@ export function ClientsClient({ content }: ClientsClientProps) {
             })}
           </div>
         </motion.div>
+        )}
       </div>
 
       {/* CSS Animation */}
       <style jsx>{`
+        .clients-scroll {
+          animation: scroll-left var(--scroll-speed-mobile) linear infinite;
+        }
+        
         @keyframes scroll-left {
           0% {
             transform: translateX(0);
           }
           100% {
             transform: translateX(-50%);
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .clients-scroll {
+            animation-duration: var(--scroll-speed-tablet);
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .clients-scroll {
+            animation-duration: var(--scroll-speed-desktop);
           }
         }
       `}</style>

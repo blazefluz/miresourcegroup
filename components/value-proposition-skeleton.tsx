@@ -11,7 +11,7 @@ export function ValuePropositionSkeleton() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
           >
             {/* Badge Skeleton */}
             <div className="w-28 h-4 bg-primary/30 rounded animate-pulse mb-4" />
@@ -36,7 +36,7 @@ export function ValuePropositionSkeleton() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="flex items-start gap-4"
                 >
                   {/* Icon Skeleton */}
@@ -61,7 +61,7 @@ export function ValuePropositionSkeleton() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
             {/* Hero Image Skeleton */}
@@ -73,7 +73,7 @@ export function ValuePropositionSkeleton() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
               className="absolute -bottom-8 -left-8 bg-card border border-border rounded-2xl p-6 shadow-2xl"
             >
               <div className="flex items-center gap-4">

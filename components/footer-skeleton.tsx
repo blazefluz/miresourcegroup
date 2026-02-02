@@ -11,7 +11,7 @@ export function FooterSkeleton() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="lg:col-span-1"
           >
             {/* Brand Name Skeleton */}
@@ -33,7 +33,7 @@ export function FooterSkeleton() {
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
                   className="w-10 h-10 rounded-lg bg-primary/10 animate-pulse"
                 />
               ))}
@@ -46,7 +46,7 @@ export function FooterSkeleton() {
               key={sectionIndex}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: (sectionIndex + 1) * 0.1 }}
+              transition={{ duration: 0.3, delay: (sectionIndex + 1) * 0.05 }}
             >
               {/* Section Title Skeleton */}
               <div className="w-24 h-5 bg-foreground/10 rounded animate-pulse mb-6" />
@@ -58,7 +58,7 @@ export function FooterSkeleton() {
                     key={linkIndex}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: (sectionIndex + 1) * 0.1 + linkIndex * 0.05 }}
+                    transition={{ duration: 0.2, delay: (sectionIndex + 1) * 0.05 + linkIndex * 0.03 }}
                     className="w-20 h-4 bg-muted-foreground/20 rounded animate-pulse"
                   />
                 ))}
@@ -71,7 +71,7 @@ export function FooterSkeleton() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
           className="mt-12 pt-8 border-t border-border"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">

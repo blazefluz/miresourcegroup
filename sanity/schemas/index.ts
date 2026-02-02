@@ -7,5 +7,6 @@ import header from './header'
 import contact from './contact'
 import footer from './footer'
 import clients from './clients'
+import pageHero from './page-hero'
 
-export const schemaTypes = [hero, about, services, valueProposition, testimonials, clients, header, contact, footer]
+export const schemaTypes = [hero, about, services, valueProposition, testimonials, clients, header, contact, footer, pageHero]

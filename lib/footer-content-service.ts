@@ -45,7 +45,6 @@ const placeholderFooterContent: FooterContent = {
   ],
   copyright: {
     companyName: 'M.I Resource Group',
-    additionalText: 'Designed with excellence in Lagos, Nigeria',
   },
 }
 
@@ -70,6 +69,17 @@ export async function getFooterContent(): Promise<FooterContent> {
     if (!content) {
       console.warn('⚠️ No footer content found in CMS, using placeholder content')
       return placeholderFooterContent
+    }
+
+    // Filter out "Clients" link from all footer sections
+    if (content.footerSections) {
+      content.footerSections = content.footerSections.map((section: any) => ({
+        ...section,
+        links: section.links.filter((link: any) => 
+          link.name.toLowerCase() !== 'clients' && 
+          link.name.toLowerCase() !== 'our clients'
+        )
+      }))
     }
 
     return content
