@@ -55,19 +55,20 @@ export function HeroClient({ content }: HeroClientProps) {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
         <div className="max-w-4xl">
           {/* Subheadline Badge */}
           {subheadline && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }}
               className="mb-6"
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                {subheadline}
+                <span className="hidden sm:inline">{subheadline}</span>
+                <span className="sm:hidden">Oil & Gas Support Services</span>
               </span>
             </motion.div>
           )}
@@ -77,7 +78,7 @@ export function HeroClient({ content }: HeroClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-balance"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-balance"
           >
             {headline}
           </motion.h1>
@@ -87,7 +88,7 @@ export function HeroClient({ content }: HeroClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed prose prose-invert"
+            className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed prose prose-invert"
           >
             <PortableText
               value={description}
@@ -131,14 +132,14 @@ export function HeroClient({ content }: HeroClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             {primaryCTA && (
               <motion.a
                 href={primaryCTA.url}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-all"
+                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all"
               >
                 {primaryCTA.text}
                 <ArrowRight

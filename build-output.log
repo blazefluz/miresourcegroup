@@ -1,0 +1,63 @@
+
+> mi-resource-group@0.1.0 build
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Turbopack build encountered 1 warnings:
+./node_modules/.pnpm/isomorphic-dompurify@2.26.0/node_modules/isomorphic-dompurify
+Package jsdom can't be external
+The request jsdom matches serverExternalPackages (or the default list).
+The package resolves to a different version when requested from the project directory (27.3.0) compared to the package requested from the importing module (26.1.0).
+Make sure to install the same version of the package in both locations.
+
+
+ ✓ Compiled successfully in 31.1s
+   Skipping validation of types
+   Collecting page data using 7 workers ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 7 workers (0/11) ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 7 workers (2/11) 
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+✅ Hero content exists, skipping hero migration
+   Generating static pages using 7 workers (5/11) 
+✅ About content exists, skipping about migration
+✅ Services content exists, skipping services migration
+✅ Value proposition content exists, skipping value proposition migration
+✅ Testimonials content exists, skipping testimonials migration
+✅ Header content exists, skipping header migration
+✅ Contact content exists, skipping contact migration
+✅ Footer content exists, skipping footer migration
+✅ Clients content exists, skipping clients migration
+   Generating static pages using 7 workers (8/11) 
+ ✓ Generating static pages using 7 workers (11/11) in 2.7s
+   Finalizing page optimization ...
+
+Route (app)                  Revalidate  Expire
+┌ ○ /                                1m      1y
+├ ○ /_not-found
+├ ○ /about                           1m      1y
+├ ƒ /api/draft-mode/disable
+├ ƒ /api/draft-mode/enable
+├ ○ /contact
+├ ○ /robots.txt
+├ ○ /services
+├ ○ /sitemap.xml
+├ ƒ /studio/[[...tool]]
+└ ○ /testimonials
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -116,27 +116,27 @@ export function ServiceDetails() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="py-24 bg-background" ref={ref}>
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-16 sm:py-20 lg:py-24 bg-background" ref={ref}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
+          <span className="text-primary text-xs sm:text-sm font-semibold tracking-wider uppercase">
             Service Portfolio
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
+          <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-balance">
             Comprehensive <span className="text-primary">Solutions</span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Full-spectrum support services backed by experienced teams, modern equipment, and proven methodologies for Nigeria's Oil & Gas industry
           </p>
         </motion.div>
 
         {/* Service Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12 justify-center">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 justify-center">
           {services.map((service, index) => {
             const IconComponent = service.icon
             const isActive = activeTab === index
@@ -148,14 +148,15 @@ export function ServiceDetails() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                className={`flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 ${
                   isActive
                     ? `${service.bgColor} text-white shadow-lg`
                     : 'bg-card text-foreground border border-border hover:border-primary/40'
                 }`}
               >
-                <IconComponent className="w-5 h-5" />
+                <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="hidden sm:inline">{service.title}</span>
+                <span className="sm:hidden text-xs">{service.title.split(' ')[0]}</span>
               </motion.button>
             )
           })}
@@ -195,21 +196,21 @@ export function ServiceDetails() {
             </div>
 
             {/* Right Column - Content */}
-            <div className="p-8 lg:p-12 space-y-6">
+            <div className="p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-foreground mb-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                   {services[activeTab].title}
                 </h3>
-                <p className={`text-sm font-semibold ${services[activeTab].color} mb-4`}>
+                <p className={`text-xs sm:text-sm font-semibold ${services[activeTab].color} mb-3 sm:mb-4`}>
                   {services[activeTab].tagline}
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {services[activeTab].description}
                 </p>
               </div>
 
               <div>
-                <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">
+                <h4 className="text-xs sm:text-sm font-bold text-foreground uppercase tracking-wider mb-3 sm:mb-4">
                   Key Capabilities & Features
                 </h4>
                 <div className="grid gap-3">
@@ -219,10 +220,10 @@ export function ServiceDetails() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: idx * 0.05 }}
-                      className="flex items-start gap-3"
+                      className="flex items-start gap-2 sm:gap-3"
                     >
-                      <CheckCircle2 className={`w-5 h-5 ${services[activeTab].color} shrink-0 mt-0.5`} />
-                      <span className="text-sm text-muted-foreground leading-relaxed">
+                      <CheckCircle2 className={`w-4 h-4 sm:w-5 sm:h-5 ${services[activeTab].color} shrink-0 mt-0.5`} />
+                      <span className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                         {feature}
                       </span>
                     </motion.div>
@@ -232,7 +233,7 @@ export function ServiceDetails() {
 
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors"
               >
                 Request This Service
                 <ArrowRight className="w-4 h-4" />
@@ -246,20 +247,20 @@ export function ServiceDetails() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 p-6 bg-primary/5 rounded-2xl border border-primary/20"
+          className="mt-8 sm:mt-12 p-4 sm:p-6 bg-primary/5 rounded-2xl border border-primary/20"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
             <div>
-              <h4 className="text-lg font-bold text-foreground mb-1">
+              <h4 className="text-base sm:text-lg font-bold text-foreground mb-1">
                 Need a Custom Solution?
               </h4>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 We offer turnkey packages or customized groupings of individual services tailored to your specific needs
               </p>
             </div>
             <a
               href="/contact"
-              className="shrink-0 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
+              className="w-full md:w-auto shrink-0 px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap text-center"
             >
               Discuss Your Project
             </a>

@@ -31,7 +31,7 @@ export function HeroSkeleton() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="mb-6"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
@@ -44,7 +44,7 @@ export function HeroSkeleton() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.05 }}
             className="space-y-4 mb-8"
           >
             <div className="w-full h-16 bg-foreground/10 rounded animate-pulse" />
@@ -55,7 +55,7 @@ export function HeroSkeleton() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="space-y-3 mb-10"
           >
             <div className="w-full h-6 bg-muted-foreground/20 rounded animate-pulse" />
@@ -67,7 +67,7 @@ export function HeroSkeleton() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.15 }}
             className="flex flex-col sm:flex-row gap-4 mb-20"
           >
             <div className="w-40 h-12 bg-primary/30 rounded-full animate-pulse" />
@@ -78,7 +78,7 @@ export function HeroSkeleton() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {Array.from({ length: 4 }).map((_, index) => (

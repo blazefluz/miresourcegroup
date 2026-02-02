@@ -31,14 +31,14 @@ export function ClientsSkeleton() {
           className="relative overflow-hidden"
         >
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-background to-transparent z-10" />
 
           {/* Logo Skeletons Container */}
           <div 
             className="flex items-center"
             style={{
-              animation: 'scroll-left 35s linear infinite',
+              animation: 'scroll-left-mobile 25s linear infinite',
               width: 'fit-content'
             }}
           >
@@ -49,9 +49,9 @@ export function ClientsSkeleton() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="flex-shrink-0 mx-8"
+                className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8"
               >
-                <div className="w-32 h-16 sm:w-40 sm:h-20 bg-white rounded-2xl shadow-sm border border-border/20 animate-pulse" />
+                <div className="w-24 h-12 sm:w-32 sm:h-16 lg:w-40 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-sm border border-border/20 animate-pulse" />
               </motion.div>
             ))}
 
@@ -62,9 +62,9 @@ export function ClientsSkeleton() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: (index + 6) * 0.05 }}
-                className="flex-shrink-0 mx-8"
+                className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8"
               >
-                <div className="w-32 h-16 sm:w-40 sm:h-20 bg-white rounded-2xl shadow-sm border border-border/20 animate-pulse" />
+                <div className="w-24 h-12 sm:w-32 sm:h-16 lg:w-40 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-sm border border-border/20 animate-pulse" />
               </motion.div>
             ))}
           </div>
@@ -73,6 +73,36 @@ export function ClientsSkeleton() {
 
       {/* CSS Animation */}
       <style jsx>{`
+        @keyframes scroll-left-mobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .flex.items-center {
+            animation: scroll-left-tablet 30s linear infinite !important;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .flex.items-center {
+            animation: scroll-left 40s linear infinite !important;
+          }
+        }
+        
+        @keyframes scroll-left-tablet {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
         @keyframes scroll-left {
           0% {
             transform: translateX(0);

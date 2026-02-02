@@ -135,11 +135,11 @@ export default function HeaderClient({ content }: HeaderClientProps) {
         isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-6 py-4">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <motion.a
             href="/"
-            className="flex items-center gap-3 text-3xl font-bold tracking-wide"
+            className="flex items-center gap-2 sm:gap-3 text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -147,10 +147,10 @@ export default function HeaderClient({ content }: HeaderClientProps) {
               <img 
                 src="/MIResourcesLogo.png" 
                 alt="M.I Resource Group Logo" 
-                className="h-10 w-auto"
+                className="h-8 sm:h-9 lg:h-10 w-auto"
               />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <span className="text-primary">{content.brandName.primary}</span>{" "}
               <span className="text-foreground">{content.brandName.secondary}</span>
             </div>
@@ -190,11 +190,11 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
                           onMouseLeave={() => setServicesDropdownOpen(false)}
-                          className="absolute top-full left-1/2 -translate-x-[60%] mt-2 w-[1200px] bg-card border border-border rounded-lg shadow-2xl overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-[60%] mt-2 w-[1200px] bg-background border border-border rounded-lg shadow-2xl overflow-hidden"
                         >
                           <div className="flex">
                             {/* Left Sidebar - Categories */}
-                            <div className="w-80 bg-muted/20 border-r border-border">
+                            <div className="w-80 bg-muted/40 border-r border-border">
                               <div className="p-6">
                                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-3">
                                   Services we offer
@@ -284,7 +284,7 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                           </div>
 
                           {/* Footer */}
-                          <div className="bg-muted/10 px-6 py-3 border-t border-border flex items-center justify-between">
+                          <div className="bg-muted/30 px-6 py-3 border-t border-border flex items-center justify-between">
                             <p className="text-xs text-muted-foreground">
                               Explore our comprehensive service offerings
                             </p>
@@ -348,9 +348,9 @@ export default function HeaderClient({ content }: HeaderClientProps) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-t border-border mt-4 rounded-b-lg"
             >
-              <div className="py-6 flex flex-col gap-4">
+              <div className="py-6 px-4 flex flex-col gap-4">
                 {content.navigation.map((link, index) => (
                   <motion.a
                     key={link.name}
