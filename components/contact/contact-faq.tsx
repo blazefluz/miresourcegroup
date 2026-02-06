@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "How can I request a quote or start a project?",
-    answer: "You can contact us through our contact form, email info@miresourcegroup.com, or call +234 807 117 3927. For direct inquiries, reach out to our Managing Director, Mike Ike Benjamin at +234 803 045 5383 or michael.i@miresourcegroup.com."
+    answer: "You can contact us through our contact form, email info@miresourcegroup.com, or call +234 807 117 3927. For direct inquiries, reach out to our Administrator, Ojeisekhoba Divine at +234 815 927 1443 or info@miresourcegroup.com."
   },
   {
     question: "What makes M.I Resources different from competitors?",

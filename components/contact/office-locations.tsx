@@ -8,21 +8,21 @@ const offices = [
   {
     name: "Port Harcourt Office",
     type: "Head Office",
-    address: "Plot 36 Sani Abacha Road GRA Phase 3, Port Harcourt, Nigeria",
+    address: "Plot 30 Sani Abacha Road, GRA Phase 3, Port Harcourt, Rivers State.",
     phone: "+234 807 117 3927",
     email: "info@miresourcegroup.com",
     contact: {
-      name: "Mike Ike Benjamin",
-      title: "Managing Director",
-      phone: "+234 803 045 5383",
-      email: "michael.i@miresourcegroup.com"
+      name: "Ojeisekhoba Divine",
+      title: "Administrator",
+      phone: "+234 815 927 1443",
+      email: "info@miresourcegroup.com"
     },
     hours: "Mon-Fri: 8:00 AM - 6:00 PM"
   },
   {
     name: "Lagos Office",
     type: "Branch Office",
-    address: "#21 Prince Kazeem Eletu way, Carnal West Estate, Jakande Lekki Lagos",
+    address: "40B, Olanrewaju Ninalowo street, off Kafayat AbdulRasak street, Lekki phase one, Lagos.",
     phone: "+234 807 117 3927",
     email: "info@miresourcegroup.com",
     hours: "Mon-Fri: 8:00 AM - 6:00 PM"

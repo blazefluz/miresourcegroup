@@ -41,7 +41,7 @@ export function getOptimizedImageUrl(
 // Client for fetching data in Server Components
 export const client = createClient({
   ...config,
-  useCdn: true, // `false` if you want to ensure fresh data
+  useCdn: false, // Set to false to ensure fresh data during development
 })
 
 // Client for fetching data in draft mode

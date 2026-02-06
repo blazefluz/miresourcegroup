@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import Image from "next/image"
-import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight } from "lucide-react"
+import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight, Users } from "lucide-react"
 
 const services = [
   {
@@ -12,6 +12,7 @@ const services = [
     tagline: "Comprehensive engineering solutions across multiple disciplines",
     description: "M.I Resources has comprehensive engineering resources covering a wide expanse of disciplines and work-projects in Civil, Mechanical, Fabrication and Structural Engineering. Our teams are supported by the latest technology and software in engineering and structural design.",
     features: [
+      "Construction and Maintenance - Turnkey infrastructure and industrial project implementation",
       "Civil Engineering Design - Heavy Civil Construction, Road Works, Commercial & Industrial",
       "Mechanical & Fabrication - Deck Extensions, Subsea Templates, Masts & Substructures",
       "Welding Services - Large/Small Bore Piping (Stainless Steel, Carbon, Duplex)",
@@ -29,14 +30,14 @@ const services = [
     tagline: "Strategic sourcing and procurement solutions",
     description: "We deliver proven procurement strategies and solutions which holistically reduce supply chain costs and deliver high-quality materials that meet your specific requirements. Our deep network of alliances across the globe ensures access to the right sources.",
     features: [
+      "Office, Drilling and Industrial Equipment & fittings",
       "Petroleum Products & Lubricants, Oil Filters, Consumables",
       "Marine & Oil Tools, PPE & Safety Equipment",
-      "Valves, Fittings, Pipes, Bolts & Nuts, Electrical & Lighting",
-      "Office/Industrial Equipment & Fittings",
+      "Flanges, Valves, Fittings, Pipes, Bolts & Nuts, Electrical & Lighting",
       "Authorized OEM Distributors & Third-Party Quality Inspectors",
       "Global Sourcing Network with Freight Forwarders"
     ],
-    image: "/warehouse-manager-walking-through-large-storage-area-holding-tablet-while-forklift-operating-background.jpg",
+    image: "/warehouse-employees-putting-boxes-desk-ready-shipment.jpg",
     color: "text-green-500",
     bgColor: "bg-green-500"
   },
@@ -63,6 +64,10 @@ const services = [
     tagline: "Comprehensive logistics and transportation solutions",
     description: "Our logistics services ensure getting the right product to the right customer, in the right quantity, in the right condition, at the right place, at the right time, and at the right cost. We operate the 7 Rs of logistics framework.",
     features: [
+      "Marine Logistics - Offshore supply and maritime transportation services",
+      "Fleet Management - Comprehensive vehicle and equipment management",
+      "Navigation Maintenance and Management - Maritime navigation systems and support",
+      "Motor Tanker Vehicles - Specialized tanker fleet for petroleum products",
       "Transportation Fleet: Toyota Hilux Trucks, Hiace Buses, Self Loader Trucks (8 Tons)",
       "Heavy Haulage: Low Boy Mark Trailers, 20 Tons Dump Trucks",
       "Support Services: 3000 GL Water Tankers, Light Vehicles",
@@ -80,10 +85,9 @@ const services = [
     tagline: "Professional management and consulting services",
     description: "M.I Resources offers business administration and management services for clients in both large and small-scale businesses. Our experienced project management team handles projects on large scale involving a diversity of disciplines with clear structure and progress tracking.",
     features: [
+      "Environmental Management - E.I.A (Environmental Inspection Analysis)/Oil Spill/Clean up, Compliance, Waste Management, Sustainability",
       "Project Management - Large-Scale Multi-Discipline Coordination",
       "Business Administration - Process Optimization & Operational Management",
-      "Environmental Management - Compliance, Waste Management, Sustainability",
-      "Human Resources - Personnel Management, Training & Development",
       "Strategic Planning & Budget Management",
       "Clear Structure with Progress Monitoring"
     ],
@@ -92,21 +96,45 @@ const services = [
     bgColor: "bg-indigo-500"
   },
   {
-    icon: HardHat,
-    title: "Construction & Maintenance",
-    tagline: "Turnkey construction and maintenance solutions",
-    description: "M.I Resources places all Construction and Engineering services under one roof, enabling our Group to improve its 'Turnkey' capability in infrastructure and industrial project implementation. We offer complete packages or customized groupings.",
+    icon: CheckCircle2,
+    title: "Sales and Distribution",
+    tagline: "Strategic sales and distribution network solutions",
+    description: "M.I Resources provides comprehensive sales and distribution services, leveraging our extensive network and logistics capabilities to ensure efficient market reach and customer satisfaction across Nigeria's Oil & Gas sector.",
     features: [
-      "Heavy Construction: Excavators, CAT 966C Wheel Loaders, Concrete Mixers",
-      "Road Construction: Paver DYNAPAC F 12W, Vibrating Rollers DYNAPAC CP271",
-      "Welding & Fabrication: 6x Welding Machines 280-400AMP, On-Site Services",
-      "Maintenance Services: Preventive Maintenance, Equipment Servicing, Emergency Repairs",
-      "Turnkey or Customized Service Packages",
-      "Nationwide Deployment from Port Harcourt Base"
+      "Products and Services - Comprehensive portfolio of Oil & Gas solutions",
+      "Sales Strategy Development - Market Analysis & Customer Targeting",
+      "Distribution Network Management - Nationwide Coverage & Optimization",
+      "Market Development - New Territory Expansion & Market Penetration",
+      "Customer Relations - Account Management & Support Services",
+      "Order Fulfillment - Efficient Processing & Delivery Coordination",
+      "Channel Management - Multi-Channel Distribution Strategy"
     ],
-    image: "/african-american-worker-standing-uniform-wearing-safety-hat-factory.jpg",
-    color: "text-red-500",
-    bgColor: "bg-red-500"
+    image: "/three-factory-workers-safety-hats-discussing-manufacture-plan.jpg",
+    color: "text-teal-500",
+    bgColor: "bg-teal-500"
+  },
+  {
+    icon: Users,
+    title: "Human Capacity Development/Training",
+    tagline: "Professional development and capacity building programs",
+    description: "M.I Resources offers comprehensive training and development programs designed to enhance workforce capabilities, improve performance, and build sustainable competitive advantage through continuous learning and skill development.",
+    features: [
+      "Leadership & Management - Executive development and team leadership skills",
+      "Policy Making & Strategic Implementation - Strategic planning and execution",
+      "Work Performance/Productivity Enhancement - Efficiency and output optimization",
+      "Sales & Marketing - Customer engagement and market strategies",
+      "Negotiations & Conflict Resolution - Effective communication and problem-solving",
+      "Supply Chain Management (SCM) - End-to-end logistics optimization",
+      "Soft Skills & Support Services - Communication, teamwork, and interpersonal skills",
+      "A.I, Business & Systems Automation - Digital transformation and technology adoption",
+      "Human Resource Management - Personnel development and organizational behavior",
+      "Stress Management & Work Life Balance - Wellness and productivity programs",
+      "Safety & Quality Assurance Training - Compliance and best practices",
+      "Emotional Intelligence & Health Education - Personal development and wellbeing"
+    ],
+    image: "/industrial-designers-working-3d-model.jpg",
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500"
   }
 ]
 

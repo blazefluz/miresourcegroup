@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ChevronDown, Wrench, Package, Truck, BarChart3, Lightbulb, Headphones } from "lucide-react"
+import { Menu, X, ChevronDown, Wrench, Package, Truck, BarChart3, Lightbulb, CheckCircle2, Users } from "lucide-react"
 import type { HeaderContent } from "@/types/sanity"
 
 interface HeaderClientProps {
@@ -17,6 +17,7 @@ const servicesMenu = {
       title: "Engineering Services",
       href: "/services",
       subcategories: [
+        { name: "Construction & Maintenance", href: "/services" },
         { name: "Mechanical & Civil Works", href: "/services" },
         { name: "Fabrication & Instrumentation", href: "/services" },
         { name: "Oil Field Services", href: "/services" },
@@ -30,11 +31,12 @@ const servicesMenu = {
       title: "Procurement Services",
       href: "/services",
       subcategories: [
+        { name: "Office, Drilling and Industrial Equipment & fittings", href: "/services" },
         { name: "Equipment & Material Supply", href: "/services" },
         { name: "Petroleum Products & Lubricants", href: "/services" },
         { name: "Marine & Oil Tools", href: "/services" },
         { name: "PPE & Safety Equipment", href: "/services" },
-        { name: "Valves, Fittings & Pipes", href: "/services" },
+        { name: "Flanges, Valves, Fittings & Pipes", href: "/services" },
         { name: "Chandelling Services", href: "/services" },
       ]
     },
@@ -56,6 +58,10 @@ const servicesMenu = {
       title: "Logistics Services",
       href: "/services",
       subcategories: [
+        { name: "Marine Logistics", href: "/services" },
+        { name: "Fleet Management", href: "/services" },
+        { name: "Navigation Maintenance and Management", href: "/services" },
+        { name: "Motor Tanker Vehicles", href: "/services" },
         { name: "Material Transportation", href: "/services" },
         { name: "Heavy Equipment Haulage", href: "/services" },
         { name: "Freight Management", href: "/services" },
@@ -69,25 +75,44 @@ const servicesMenu = {
       title: "Management Services",
       href: "/services",
       subcategories: [
-        { name: "Business Administration", href: "/services" },
+        { name: "Environmental Management - E.I.A/Oil Spill/Clean up", href: "/services" },
         { name: "Project Management", href: "/services" },
-        { name: "Environmental Management", href: "/services" },
-        { name: "Human Resource Management", href: "/services" },
+        { name: "Business Administration", href: "/services" },
         { name: "Industrial Management", href: "/services" },
         { name: "Strategic Planning", href: "/services" },
       ]
     },
     {
-      icon: Headphones,
-      title: "Construction & Maintenance",
+      icon: CheckCircle2,
+      title: "Sales and Distribution",
       href: "/services",
       subcategories: [
-        { name: "Heavy Civil Construction", href: "/services" },
-        { name: "Road Works & Maintenance", href: "/services" },
-        { name: "Commercial Construction", href: "/services" },
-        { name: "Industrial Construction", href: "/services" },
-        { name: "Equipment Maintenance", href: "/services" },
-        { name: "Turnkey Solutions", href: "/services" },
+        { name: "Products and Services", href: "/services" },
+        { name: "Sales Strategy Development", href: "/services" },
+        { name: "Distribution Network Management", href: "/services" },
+        { name: "Market Development", href: "/services" },
+        { name: "Customer Relations", href: "/services" },
+        { name: "Order Fulfillment", href: "/services" },
+        { name: "Channel Management", href: "/services" },
+      ]
+    },
+    {
+      icon: Users,
+      title: "Human Capacity Development/Training",
+      href: "/services",
+      subcategories: [
+        { name: "Leadership & Management", href: "/services" },
+        { name: "Policy Making & Strategic Implementation", href: "/services" },
+        { name: "Work Performance/Productivity Enhancement", href: "/services" },
+        { name: "Sales & Marketing", href: "/services" },
+        { name: "Negotiations & Conflict Resolution", href: "/services" },
+        { name: "Supply Chain Management (SCM)", href: "/services" },
+        { name: "Soft Skills & Support Services", href: "/services" },
+        { name: "A.I, Business & Systems Automation", href: "/services" },
+        { name: "Human Resource Management", href: "/services" },
+        { name: "Stress Management & Work Life Balance", href: "/services" },
+        { name: "Safety & Quality Assurance Training", href: "/services" },
+        { name: "Emotional Intelligence & Health Education", href: "/services" },
       ]
     },
   ]
@@ -170,7 +195,8 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                       transition={{ delay: index * 0.1 }}
                       onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                       onMouseEnter={() => setServicesDropdownOpen(true)}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group flex items-center gap-1"
+                      className="text-sm text-foreground/90 hover:text-foreground transition-colors relative group flex items-center gap-1 font-medium"
+                      style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)' }}
                     >
                       {link.name}
                       <ChevronDown 
@@ -310,7 +336,8 @@ export default function HeaderClient({ content }: HeaderClientProps) {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+                  className="text-sm text-foreground/90 hover:text-foreground transition-colors relative group font-medium"
+                  style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)' }}
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />

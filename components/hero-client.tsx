@@ -40,8 +40,8 @@ export function HeroClient({ content }: HeroClientProps) {
             backgroundImage: `url('${bgImageUrl}')`,
           }}
         />
-        <div className="absolute inset-0 bg-linear-to-b from-background/90 via-background/70 to-background" />
-        <div className="absolute inset-0 bg-linear-to-r from-background via-transparent to-background/50" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/84 via-background/72 to-background/95" />
+        <div className="absolute inset-0 bg-linear-to-r from-background/84 via-background/5 to-background/62" />
       </div>
 
       {/* Grid Pattern Overlay */}
@@ -79,6 +79,7 @@ export function HeroClient({ content }: HeroClientProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-balance"
+            style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3)' }}
           >
             {headline}
           </motion.h1>
@@ -88,7 +89,8 @@ export function HeroClient({ content }: HeroClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed prose prose-invert"
+            className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-foreground/65 max-w-2xl leading-relaxed prose prose-invert"
+            style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3)' }}
           >
             <PortableText
               value={description}
