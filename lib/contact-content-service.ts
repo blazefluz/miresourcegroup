@@ -16,7 +16,7 @@ const placeholderContactContent: ContactContent = {
         {
           _type: 'span',
           _key: 'placeholder-span',
-          text: 'Ready to elevate your operations? Get in touch with our team to discuss how M.I Resource Group can support your business needs.',
+          text: 'Ready to elevate your operations? Get in touch with our team to discuss how M.I Resources can support your business needs.',
           marks: [],
         },
       ],

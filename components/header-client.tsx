@@ -77,9 +77,10 @@ const servicesMenu = {
       subcategories: [
         { name: "Environmental Management - E.I.A/Oil Spill/Clean up", href: "/services" },
         { name: "Project Management", href: "/services" },
-        { name: "Business Administration", href: "/services" },
+        { name: "Business Management Solutions and Administration", href: "/services" },
         { name: "Industrial Management", href: "/services" },
-        { name: "Strategic Planning", href: "/services" },
+        { name: "Strategic Planning and Implementation", href: "/services" },
+        { name: "Budget Management", href: "/services" },
       ]
     },
     {
@@ -170,9 +171,9 @@ export default function HeaderClient({ content }: HeaderClientProps) {
           >
             <div className="p-1 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50">
               <img 
-                src="/MIResourcesLogo.png" 
-                alt="M.I Resource Group Logo" 
-                className="h-8 sm:h-9 lg:h-10 w-auto"
+                src="/logos/CompanyLogo.jpeg" 
+                alt="M.I Resources Logo" 
+                className="h-8 sm:h-9 lg:h-10 w-auto rounded"
               />
             </div>
             <div className="hidden sm:block">

@@ -39,7 +39,7 @@ const placeholderTestimonialsContent: TestimonialsContent = {
   highlightedText: 'Clients Say',
   testimonials: [
     {
-      quote: 'M.I Resource Group has been instrumental in optimizing our supply chain operations. Their professionalism and expertise are unmatched in the industry.',
+      quote: 'M.I Resources has been instrumental in optimizing our supply chain operations. Their professionalism and expertise are unmatched in the industry.',
       author: 'Adebayo Johnson',
       role: 'Operations Director',
       company: 'Nigerian Oil Corp',
@@ -55,7 +55,7 @@ const placeholderTestimonialsContent: TestimonialsContent = {
       order: 2
     },
     {
-      quote: 'The management services provided by M.I Resource Group transformed our operational efficiency. Highly recommended for any energy company.',
+      quote: 'The management services provided by M.I Resources transformed our operational efficiency. Highly recommended for any energy company.',
       author: 'Michael Eze',
       role: 'CEO',
       company: 'Delta Oil Services',
@@ -70,8 +70,8 @@ const placeholderTestimonialsContent: TestimonialsContent = {
     showDots: true
   },
   seo: {
-    title: 'Client Testimonials - M.I Resource Group',
-    description: 'Read what our clients say about M.I Resource Group\'s exceptional support services in Nigeria\'s energy sector.'
+    title: 'Client Testimonials - M.I Resources',
+    description: 'Read what our clients say about M.I Resources\' exceptional support services in Nigeria\'s energy sector.'
   }
 }
 

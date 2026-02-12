@@ -81,7 +81,7 @@ export function ValuePropositionClient({ content }: ValuePropositionClientProps)
               <div className="absolute inset-4 rounded-3xl overflow-hidden border border-border">
                 <Image
                   src={getImageUrl()}
-                  alt={content.heroImage?.alt || 'M.I Resource Group Team'}
+                  alt={content.heroImage?.alt || 'M.I Resources Team'}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

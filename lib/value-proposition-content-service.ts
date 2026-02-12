@@ -45,7 +45,7 @@ const placeholderValuePropositionContent: ValuePropositionContent = {
         {
           _type: 'span',
           _key: 'placeholder-span',
-          text: 'With a proven track record and unwavering commitment to quality, M.I Resource Group stands as the premier choice for support services in Nigeria\'s energy sector.',
+          text: 'With a proven track record and unwavering commitment to quality, M.I Resources stands as the premier choice for support services in Nigeria\'s energy sector.',
           marks: []
         }
       ],
@@ -58,7 +58,7 @@ const placeholderValuePropositionContent: ValuePropositionContent = {
       _ref: 'image-placeholder-600x600-jpg',
       _type: 'reference'
     },
-    alt: 'M.I Resource Group Team',
+    alt: 'M.I Resources Team',
     hotspot: {
       x: 0.5,
       y: 0.5,
@@ -99,8 +99,8 @@ const placeholderValuePropositionContent: ValuePropositionContent = {
     show: true
   },
   seo: {
-    title: 'Why Choose Us - M.I Resource Group',
-    description: 'Discover why M.I Resource Group is the trusted partner for energy sector support services in Nigeria.'
+    title: 'Why Choose Us - M.I Resources',
+    description: 'Discover why M.I Resources is the trusted partner for energy sector support services in Nigeria.'
   }
 }
 

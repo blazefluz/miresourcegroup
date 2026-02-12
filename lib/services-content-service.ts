@@ -85,7 +85,7 @@ const placeholderServicesContent: ServicesContent = {
     }
   ],
   seo: {
-    title: 'Our Services - M.I Resource Group',
+    title: 'Our Services - M.I Resources',
     description: 'Comprehensive engineering, supply chain, and management services for the Oil & Gas industry in Nigeria.'
   }
 }

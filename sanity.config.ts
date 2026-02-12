@@ -34,7 +34,7 @@ if (!dataset) {
 export default defineConfig({
   basePath: '/studio',
   name: 'mi-resource-group-studio',
-  title: 'M.I Resource Group CMS',
+  title: 'M.I Resources CMS',
 
   projectId: projectId,
   dataset: dataset,

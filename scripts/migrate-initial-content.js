@@ -27,7 +27,7 @@ const initialHeroContent = {
         {
           _type: 'span',
           _key: 'initial-span',
-          text: 'M.I Resource Group delivers comprehensive support services in Engineering, Procurement, Supply Chain Management, and Management Services to the energy sector.',
+          text: 'M.I Resources delivers comprehensive engineering, procurement, supply chain management, logistics solutions and human capacity development. We are a multi-disciplinary organization with global standards, offering fully integrated services that unlock great value for the Nigeria\'s Oil & Gas space and across Africa.',
           marks: [],
         },
       ],
@@ -65,7 +65,7 @@ const initialAboutContent = {
         {
           _type: 'span',
           _key: 'about-span-1',
-          text: 'M.I Resource Group has established itself as the leading support services provider in Nigeria\'s Oil & Gas industry. With over 15 years of experience, we deliver comprehensive solutions in Engineering & Procurement, Supply Chain Management, and Management Services.',
+          text: 'M.I Resources has established itself as the leading support services provider in Nigeria\'s Oil & Gas industry. With over 15 years of experience, we deliver comprehensive solutions in Engineering & Procurement, Supply Chain Management, and Management Services.',
           marks: [],
         },
       ],
@@ -205,7 +205,7 @@ const initialValuePropositionContent = {
         {
           _type: 'span',
           _key: 'value-prop-span',
-          text: 'With a proven track record and unwavering commitment to quality, M.I Resource Group stands as the premier choice for support services in Nigeria\'s energy sector.',
+          text: 'With a proven track record and unwavering commitment to quality, M.I Resources stands as the premier choice for support services in Nigeria\'s energy sector.',
           marks: [],
         },
       ],
@@ -259,7 +259,7 @@ const initialTestimonialsContent = {
   testimonials: [
     {
       _key: 'testimonial-1',
-      quote: 'M.I Resource Group has been instrumental in optimizing our supply chain operations. Their professionalism and expertise are unmatched in the industry.',
+      quote: 'M.I Resources has been instrumental in optimizing our supply chain operations. Their professionalism and expertise are unmatched in the industry.',
       author: 'Adebayo Johnson',
       role: 'Operations Director',
       company: 'Nigerian Oil Corp',
@@ -277,7 +277,7 @@ const initialTestimonialsContent = {
     },
     {
       _key: 'testimonial-3',
-      quote: 'The management services provided by M.I Resource Group transformed our operational efficiency. Highly recommended for any energy company.',
+      quote: 'The management services provided by M.I Resources transformed our operational efficiency. Highly recommended for any energy company.',
       author: 'Michael Eze',
       role: 'CEO',
       company: 'Delta Oil Services',
@@ -296,8 +296,8 @@ const initialHeaderContent = {
   _id: 'header-content',
   _type: 'header',
   brandName: {
-    primary: 'M.I',
-    secondary: 'Resource',
+    primary: 'M.I Resources',
+    secondary: 'Services Ltd',
   },
   navigation: [
     { _key: 'nav-1', name: 'Home', href: '#home', order: 1 },
@@ -327,7 +327,7 @@ const initialContactContent = {
         {
           _type: 'span',
           _key: 'contact-span',
-          text: 'Ready to elevate your operations? Get in touch with our team to discuss how M.I Resource Group can support your business needs.',
+          text: 'Ready to elevate your operations? Get in touch with our team to discuss how M.I Resources can support your business needs.',
           marks: [],
         },
       ],
@@ -370,8 +370,8 @@ const initialFooterContent = {
   _id: 'footer-content',
   _type: 'footer',
   brandName: {
-    primary: 'M.I',
-    secondary: 'Resource',
+    primary: 'M.I Resources',
+    secondary: 'Services Limited',
   },
   tagline: 'No.1 Support Services Provider in Nigeria\'s Oil & Gas Industry.',
   socialLinks: [
