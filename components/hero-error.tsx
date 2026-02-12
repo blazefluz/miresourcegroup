@@ -81,7 +81,7 @@ export function HeroError({ error, reset }: HeroErrorProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
           >
-            M.I Resource Group delivers comprehensive support services in Engineering,
+            M.I Resources delivers comprehensive support services in Engineering,
             Procurement, Supply Chain Management, and Management Services to the energy
             sector.
           </motion.p>

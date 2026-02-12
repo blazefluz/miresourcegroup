@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     apple: "/MIResourcesLogo.png",
   },
   openGraph: {
-    title: "M.I Resource Group | Oil & Gas Support Services",
+    title: "M.I Resources | Oil & Gas Support Services",
     description: "No.1 Support Services Provider in Nigeria's Oil & Gas Industry",
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://miresourcegroup.com',
-    siteName: "M.I Resource Group",
+    siteName: "M.I Resources",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "M.I Resource Group | Oil & Gas Support Services",
+    title: "M.I Resources | Oil & Gas Support Services",
     description: "No.1 Support Services Provider in Nigeria's Oil & Gas Industry",
   },
 }

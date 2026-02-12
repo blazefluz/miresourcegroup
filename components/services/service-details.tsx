@@ -75,7 +75,7 @@ const services = [
       "24/7 Availability with Rapid Response Capability",
       "Nationwide Coverage Across Nigeria"
     ],
-    image: "/aerial-view-factory-trucks-parked-near-warehouse-daytime.jpg",
+    image: "/cargo-ship-loading-commercial-port.jpg",
     color: "text-orange-500",
     bgColor: "bg-orange-500"
   },
@@ -87,11 +87,12 @@ const services = [
     features: [
       "Environmental Management - E.I.A (Environmental Inspection Analysis)/Oil Spill/Clean up, Compliance, Waste Management, Sustainability",
       "Project Management - Large-Scale Multi-Discipline Coordination",
-      "Business Administration - Process Optimization & Operational Management",
-      "Strategic Planning & Budget Management",
+      "Business Management Solutions and Administration - Process Optimization & Operational Management",
+      "Strategic Planning and Implementation",
+      "Budget Management",
       "Clear Structure with Progress Monitoring"
     ],
-    image: "/african-american-engineers-supervise-industrial-automation-system.jpg",
+    image: "/african-man-black-suit.jpg",
     color: "text-indigo-500",
     bgColor: "bg-indigo-500"
   },
@@ -109,7 +110,7 @@ const services = [
       "Order Fulfillment - Efficient Processing & Delivery Coordination",
       "Channel Management - Multi-Channel Distribution Strategy"
     ],
-    image: "/three-factory-workers-safety-hats-discussing-manufacture-plan.jpg",
+    image: "/medium-shot-man-talking-phone.jpg",
     color: "text-teal-500",
     bgColor: "bg-teal-500"
   },
