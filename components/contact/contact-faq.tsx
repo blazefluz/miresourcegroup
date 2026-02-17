@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react"
 const faqs = [
   {
     question: "What services does M.I Resource Services Ltd provide?",
-    answer: "We provide comprehensive support services including Engineering & Procurement, Supply Chain Management, Marine & Logistics Services, Management Services, and Construction & Maintenance. Our services cover everything from fabrication and instrumentation to equipment rental and project management."
+    answer: "We provide comprehensive support services including Engineering Services, Procurement Services, Supply Chain and Logistics Management, Marine Support Services, Management Services, Marine Electronics, Sales and Distribution, and Human Capacity Development/Training. Our services cover everything from fabrication and instrumentation to equipment rental and project management."
   },
   {
     question: "Are you ISO certified?",

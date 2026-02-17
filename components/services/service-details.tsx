@@ -118,9 +118,29 @@ export function ServiceDetails({ services }: ServiceDetailsProps) {
                 <p className={`text-xs sm:text-sm font-semibold ${services[activeTab].color} mb-3 sm:mb-4`}>
                   {services[activeTab].tagline}
                 </p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  {services[activeTab].description}
-                </p>
+                <div className="text-sm sm:text-base text-muted-foreground leading-relaxed space-y-4">
+                  {services[activeTab].description.split('\n\n').map((paragraph, idx) => {
+                    const trimmedPara = paragraph.trim()
+                    
+                    // Check if paragraph starts with ** (bold header)
+                    if (trimmedPara.startsWith('**') && trimmedPara.includes('**', 2)) {
+                      const endBold = trimmedPara.indexOf('**', 2)
+                      const boldText = trimmedPara.substring(2, endBold)
+                      const restText = trimmedPara.substring(endBold + 2).trim()
+                      
+                      return (
+                        <div key={idx} className="space-y-2">
+                          <h4 className="text-base sm:text-lg font-bold text-foreground">{boldText}</h4>
+                          {restText && <p className="leading-relaxed">{restText}</p>}
+                        </div>
+                      )
+                    }
+                    
+                    return trimmedPara ? (
+                      <p key={idx} className="leading-relaxed">{trimmedPara}</p>
+                    ) : null
+                  })}
+                </div>
               </div>
 
               <div>
