@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import Image from "next/image"
-import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight, Users } from "lucide-react"
+import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight, Users, Radio } from "lucide-react"
 
 const services = [
   {
@@ -30,10 +30,13 @@ const services = [
     tagline: "Strategic sourcing and procurement solutions",
     description: "We deliver proven procurement strategies and solutions which holistically reduce supply chain costs and deliver high-quality materials that meet your specific requirements. Our deep network of alliances across the globe ensures access to the right sources.",
     features: [
-      "Office, Drilling and Industrial Equipment & fittings",
+      "Equipment & Material Supply",
       "Petroleum Products & Lubricants, Oil Filters, Consumables",
-      "Marine & Oil Tools, PPE & Safety Equipment",
+      "PPE & Safety Equipment",
       "Flanges, Valves, Fittings, Pipes, Bolts & Nuts, Electrical & Lighting",
+      "Marine & Oil Tools",
+      "Office, Drilling and Industrial Equipment & fittings",
+      "Chandelling Services",
       "Authorized OEM Distributors & Third-Party Quality Inspectors",
       "Global Sourcing Network with Freight Forwarders"
     ],
@@ -60,7 +63,7 @@ const services = [
   },
   {
     icon: Truck,
-    title: "Logistics Services",
+    title: "Marine & Logistics Services",
     tagline: "Comprehensive logistics and transportation solutions",
     description: "Our logistics services ensure getting the right product to the right customer, in the right quantity, in the right condition, at the right place, at the right time, and at the right cost. We operate the 7 Rs of logistics framework.",
     features: [
@@ -95,6 +98,24 @@ const services = [
     image: "/african-man-black-suit.jpg",
     color: "text-indigo-500",
     bgColor: "bg-indigo-500"
+  },
+  {
+    icon: Radio,
+    title: "Marine Electronics",
+    tagline: "Professional marine electronics sales, installation, and maintenance",
+    description: "Our scope of services covers the sales, installation, repairs, maintenance, and support of marine electronic equipment. Our engineers are OEM-certified and trained by service partners, providing services both in port and at sea, ensuring reliable and professional support at all times.",
+    features: [
+      "VSAT Internet Systems - New hardware installation, repairs, routine maintenance, and internet subscription",
+      "GMDSS Systems - New hardware installation, repairs, reprogramming, routine maintenance, subscription, and activation of distress alert services",
+      "VDR / SVDR Systems - New hardware installation, repairs, programming of Data Acquisition Units and Capsules",
+      "Class-Approved Radio Surveyors - Annual Radio Surveys and VDR Annual Performance Tests on vessels trading throughout West African countries",
+      "Navigation Systems - Installation, repairs, and routine maintenance of Radar, Autopilot, ECDIS, Gyrocompass, GPS",
+      "Dynamic Positioning Systems - Repairs and routine maintenance",
+      "OEM-Certified Engineers - Professional support both in port and at sea"
+    ],
+    image: "/automated-factory-employee-manages-industrial-automation-system.jpg",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-600"
   },
   {
     icon: CheckCircle2,

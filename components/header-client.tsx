@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ChevronDown, Wrench, Package, Truck, BarChart3, Lightbulb, CheckCircle2, Users } from "lucide-react"
+import { Menu, X, ChevronDown, Wrench, Package, Truck, BarChart3, Lightbulb, CheckCircle2, Users, Radio } from "lucide-react"
 import type { HeaderContent } from "@/types/sanity"
 
 interface HeaderClientProps {
@@ -31,12 +31,12 @@ const servicesMenu = {
       title: "Procurement Services",
       href: "/services",
       subcategories: [
-        { name: "Office, Drilling and Industrial Equipment & fittings", href: "/services" },
         { name: "Equipment & Material Supply", href: "/services" },
         { name: "Petroleum Products & Lubricants", href: "/services" },
-        { name: "Marine & Oil Tools", href: "/services" },
         { name: "PPE & Safety Equipment", href: "/services" },
         { name: "Flanges, Valves, Fittings & Pipes", href: "/services" },
+        { name: "Marine & Oil Tools", href: "/services" },
+        { name: "Office, Drilling and Industrial Equipment & fittings", href: "/services" },
         { name: "Chandelling Services", href: "/services" },
       ]
     },
@@ -55,7 +55,7 @@ const servicesMenu = {
     },
     {
       icon: Truck,
-      title: "Logistics Services",
+      title: "Marine & Logistics Services",
       href: "/services",
       subcategories: [
         { name: "Marine Logistics", href: "/services" },
@@ -81,6 +81,19 @@ const servicesMenu = {
         { name: "Industrial Management", href: "/services" },
         { name: "Strategic Planning and Implementation", href: "/services" },
         { name: "Budget Management", href: "/services" },
+      ]
+    },
+    {
+      icon: Radio,
+      title: "Marine Electronics",
+      href: "/services",
+      subcategories: [
+        { name: "VSAT Internet Systems", href: "/services" },
+        { name: "GMDSS Systems", href: "/services" },
+        { name: "VDR / SVDR Systems", href: "/services" },
+        { name: "Navigation Systems (Radar, Autopilot, ECDIS, Gyrocompass, GPS)", href: "/services" },
+        { name: "Dynamic Positioning Systems", href: "/services" },
+        { name: "Annual Radio Surveys & VDR Performance Tests", href: "/services" },
       ]
     },
     {
