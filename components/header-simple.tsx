@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { getHeaderContent } from "@/lib/header-content-service"
+import { getServicesDetailed } from "@/lib/services-detailed-content-service"
 import { ensureInitialContent } from "@/lib/auto-migrate"
 import HeaderClient from "./header-client"
 import { HeaderSkeleton } from './header-skeleton'
@@ -11,8 +12,12 @@ async function HeaderWithContent() {
   await ensureInitialContent()
   
   // Fetch content from CMS
-  const content = await getHeaderContent()
-  return <HeaderClient content={content} />
+  const [content, services] = await Promise.all([
+    getHeaderContent(),
+    getServicesDetailed()
+  ])
+  
+  return <HeaderClient content={content} services={services} />
 }
 
 export default function HeaderSimple() {

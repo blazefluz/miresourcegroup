@@ -95,3 +95,27 @@ export function getImageMetadata(image: SanityImageAsset) {
     hasCrop: !!image.crop,
   }
 }
+
+/**
+ * Simple helper to get image URL from Sanity image object
+ * Handles both SanityImageAsset and simplified image objects
+ */
+export function getImageUrl(image: any): string {
+  // If it's already a URL string, return it
+  if (typeof image === 'string') {
+    return image
+  }
+  
+  // If it has asset.url, return that
+  if (image?.asset?.url) {
+    return image.asset.url
+  }
+  
+  // If it's a full SanityImageAsset, use the builder
+  if (image?.asset?._ref || image?._ref) {
+    return getOptimizedImageUrl(image as SanityImageAsset)
+  }
+  
+  // Fallback to placeholder
+  return '/placeholder.svg'
+}

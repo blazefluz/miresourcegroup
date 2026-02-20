@@ -2,124 +2,37 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ChevronDown, Wrench, Package, Truck, BarChart3, Lightbulb, CheckCircle2, Users } from "lucide-react"
-import type { HeaderContent } from "@/types/sanity"
+import { Menu, X, ChevronDown, Wrench, Package, Truck, BarChart3, Lightbulb, CheckCircle2, Users, Radio } from "lucide-react"
+import type { HeaderContent, ServiceDetailed } from "@/types/sanity"
 
 interface HeaderClientProps {
   content: HeaderContent
+  services: ServiceDetailed[]
 }
 
-// Services mega menu data structure - Based on actual company services
-const servicesMenu = {
-  items: [
-    {
-      icon: Wrench,
-      title: "Engineering Services",
-      href: "/services",
-      subcategories: [
-        { name: "Construction & Maintenance", href: "/services" },
-        { name: "Mechanical & Civil Works", href: "/services" },
-        { name: "Fabrication & Instrumentation", href: "/services" },
-        { name: "Oil Field Services", href: "/services" },
-        { name: "Structural Engineering", href: "/services" },
-        { name: "Electrical & Instrumentation", href: "/services" },
-        { name: "Welding Services", href: "/services" },
-      ]
-    },
-    {
-      icon: Package,
-      title: "Procurement Services",
-      href: "/services",
-      subcategories: [
-        { name: "Office, Drilling and Industrial Equipment & fittings", href: "/services" },
-        { name: "Equipment & Material Supply", href: "/services" },
-        { name: "Petroleum Products & Lubricants", href: "/services" },
-        { name: "Marine & Oil Tools", href: "/services" },
-        { name: "PPE & Safety Equipment", href: "/services" },
-        { name: "Flanges, Valves, Fittings & Pipes", href: "/services" },
-        { name: "Chandelling Services", href: "/services" },
-      ]
-    },
-    {
-      icon: BarChart3,
-      title: "Supply Chain Management",
-      href: "/services",
-      subcategories: [
-        { name: "Production Management", href: "/services" },
-        { name: "Distribution & Deliveries", href: "/services" },
-        { name: "Quality Inspection", href: "/services" },
-        { name: "Inventory Management", href: "/services" },
-        { name: "Warehousing Solutions", href: "/services" },
-        { name: "Material Dispatch", href: "/services" },
-      ]
-    },
-    {
-      icon: Truck,
-      title: "Logistics Services",
-      href: "/services",
-      subcategories: [
-        { name: "Marine Logistics", href: "/services" },
-        { name: "Fleet Management", href: "/services" },
-        { name: "Navigation Maintenance and Management", href: "/services" },
-        { name: "Motor Tanker Vehicles", href: "/services" },
-        { name: "Material Transportation", href: "/services" },
-        { name: "Heavy Equipment Haulage", href: "/services" },
-        { name: "Freight Management", href: "/services" },
-        { name: "Last Mile Delivery", href: "/services" },
-        { name: "Fleet Management", href: "/services" },
-        { name: "Customs Clearance", href: "/services" },
-      ]
-    },
-    {
-      icon: Lightbulb,
-      title: "Management Services",
-      href: "/services",
-      subcategories: [
-        { name: "Environmental Management - E.I.A/Oil Spill/Clean up", href: "/services" },
-        { name: "Project Management", href: "/services" },
-        { name: "Business Management Solutions and Administration", href: "/services" },
-        { name: "Industrial Management", href: "/services" },
-        { name: "Strategic Planning and Implementation", href: "/services" },
-        { name: "Budget Management", href: "/services" },
-      ]
-    },
-    {
-      icon: CheckCircle2,
-      title: "Sales and Distribution",
-      href: "/services",
-      subcategories: [
-        { name: "Products and Services", href: "/services" },
-        { name: "Sales Strategy Development", href: "/services" },
-        { name: "Distribution Network Management", href: "/services" },
-        { name: "Market Development", href: "/services" },
-        { name: "Customer Relations", href: "/services" },
-        { name: "Order Fulfillment", href: "/services" },
-        { name: "Channel Management", href: "/services" },
-      ]
-    },
-    {
-      icon: Users,
-      title: "Human Capacity Development/Training",
-      href: "/services",
-      subcategories: [
-        { name: "Leadership & Management", href: "/services" },
-        { name: "Policy Making & Strategic Implementation", href: "/services" },
-        { name: "Work Performance/Productivity Enhancement", href: "/services" },
-        { name: "Sales & Marketing", href: "/services" },
-        { name: "Negotiations & Conflict Resolution", href: "/services" },
-        { name: "Supply Chain Management (SCM)", href: "/services" },
-        { name: "Soft Skills & Support Services", href: "/services" },
-        { name: "A.I, Business & Systems Automation", href: "/services" },
-        { name: "Human Resource Management", href: "/services" },
-        { name: "Stress Management & Work Life Balance", href: "/services" },
-        { name: "Safety & Quality Assurance Training", href: "/services" },
-        { name: "Emotional Intelligence & Health Education", href: "/services" },
-      ]
-    },
-  ]
+// Icon mapping for services
+const iconMap: Record<string, any> = {
+  Wrench,
+  Package,
+  BarChart3,
+  Truck,
+  Lightbulb,
+  Radio,
+  CheckCircle2,
+  Users,
 }
 
-export default function HeaderClient({ content }: HeaderClientProps) {
+export default function HeaderClient({ content, services }: HeaderClientProps) {
+  // Build services menu from Sanity data
+  const servicesMenu = {
+    items: services.map(service => ({
+      icon: iconMap[service.iconName] || Wrench,
+      title: service.title,
+      href: "/services",
+      subcategories: service.subcategories || []
+    }))
+  }
+
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)

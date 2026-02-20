@@ -7,13 +7,16 @@ import { WhyChooseUs } from "@/components/services/why-choose-us"
 import { ServiceApproach } from "@/components/services/service-approach"
 import { CTASection } from "@/components/home/cta-section"
 import Footer from "@/components/footer-simple"
+import { getServicesDetailed } from "@/lib/services-detailed-content-service"
 
 export const metadata: Metadata = {
   title: "Our Services | M.I Resource Services Ltd",
   description: "Comprehensive Oil & Gas support services including Engineering, Procurement, Supply Chain Management, Logistics, Management Services, and Construction & Maintenance.",
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await getServicesDetailed()
+  
   return (
     <PageWrapper>
       <Header />
@@ -22,7 +25,7 @@ export default function ServicesPage() {
         subtitle="Comprehensive support services for Nigeria's Oil & Gas industry"
         backgroundImage="/view-male-engineer-work-engineers-day-celebration.jpg"
       />
-      <ServiceDetails />
+      <ServiceDetails services={services} />
       <WhyChooseUs />
       <ServiceApproach />
       <CTASection />

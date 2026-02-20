@@ -3,143 +3,28 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import Image from "next/image"
-import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight, Users } from "lucide-react"
+import { Wrench, Package, BarChart3, Truck, Lightbulb, HardHat, CheckCircle2, ArrowRight, Users, Radio } from "lucide-react"
+import type { ServiceDetailed } from "@/types/sanity"
+import { getImageUrl } from "@/lib/image-utils"
 
-const services = [
-  {
-    icon: Wrench,
-    title: "Engineering Services",
-    tagline: "Comprehensive engineering solutions across multiple disciplines",
-    description: "M.I Resources has comprehensive engineering resources covering a wide expanse of disciplines and work-projects in Civil, Mechanical, Fabrication and Structural Engineering. Our teams are supported by the latest technology and software in engineering and structural design.",
-    features: [
-      "Construction and Maintenance - Turnkey infrastructure and industrial project implementation",
-      "Civil Engineering Design - Heavy Civil Construction, Road Works, Commercial & Industrial",
-      "Mechanical & Fabrication - Deck Extensions, Subsea Templates, Masts & Substructures",
-      "Welding Services - Large/Small Bore Piping (Stainless Steel, Carbon, Duplex)",
-      "Electrical & Instrumentation, Mud Systems, Drilling Structures",
-      "Oil Field Services with latest technology support",
-      "Welding Processes: SMAW, Orbital, TIG, SAW"
-    ],
-    image: "/portrait-native-american-engineer-technician-wearing-safty-uniform-hand-contril-automation-robot-arm-welding-machine-with-laptop-industrial-40-factory-background-concept.jpg",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500"
-  },
-  {
-    icon: Package,
-    title: "Procurement Services",
-    tagline: "Strategic sourcing and procurement solutions",
-    description: "We deliver proven procurement strategies and solutions which holistically reduce supply chain costs and deliver high-quality materials that meet your specific requirements. Our deep network of alliances across the globe ensures access to the right sources.",
-    features: [
-      "Office, Drilling and Industrial Equipment & fittings",
-      "Petroleum Products & Lubricants, Oil Filters, Consumables",
-      "Marine & Oil Tools, PPE & Safety Equipment",
-      "Flanges, Valves, Fittings, Pipes, Bolts & Nuts, Electrical & Lighting",
-      "Authorized OEM Distributors & Third-Party Quality Inspectors",
-      "Global Sourcing Network with Freight Forwarders"
-    ],
-    image: "/warehouse-employees-putting-boxes-desk-ready-shipment.jpg",
-    color: "text-green-500",
-    bgColor: "bg-green-500"
-  },
-  {
-    icon: BarChart3,
-    title: "Supply Chain Management",
-    tagline: "End-to-end supply chain optimization",
-    description: "Our Supply Chain Management team possesses adequate logistics intervention with a well-tailored system. We operate the Kaizen-style ideology which seeks proactive measures to continually improve the supply chain and reduce deviations to industry minimums.",
-    features: [
-      "Professional Inspection Services - Client Specification Conformance",
-      "Production Management - Timely & Effective Flow of Goods",
-      "7 Rs of Logistics: Right Product, Customer, Quantity, Condition, Place, Time, Cost",
-      "Distribution & Delivery - End-to-End Tracking",
-      "Material Conveyance from Point of Purchase to End User",
-      "Kaizen Continuous Improvement Methodology"
-    ],
-    image: "/black-team-manufacturing-plant-employees-fixing-errors-debugging.jpg",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500"
-  },
-  {
-    icon: Truck,
-    title: "Logistics Services",
-    tagline: "Comprehensive logistics and transportation solutions",
-    description: "Our logistics services ensure getting the right product to the right customer, in the right quantity, in the right condition, at the right place, at the right time, and at the right cost. We operate the 7 Rs of logistics framework.",
-    features: [
-      "Marine Logistics - Offshore supply and maritime transportation services",
-      "Fleet Management - Comprehensive vehicle and equipment management",
-      "Navigation Maintenance and Management - Maritime navigation systems and support",
-      "Motor Tanker Vehicles - Specialized tanker fleet for petroleum products",
-      "Transportation Fleet: Toyota Hilux Trucks, Hiace Buses, Self Loader Trucks (8 Tons)",
-      "Heavy Haulage: Low Boy Mark Trailers, 20 Tons Dump Trucks",
-      "Support Services: 3000 GL Water Tankers, Light Vehicles",
-      "Material Distribution & Last Mile Delivery",
-      "24/7 Availability with Rapid Response Capability",
-      "Nationwide Coverage Across Nigeria"
-    ],
-    image: "/cargo-ship-loading-commercial-port.jpg",
-    color: "text-orange-500",
-    bgColor: "bg-orange-500"
-  },
-  {
-    icon: Lightbulb,
-    title: "Management Services",
-    tagline: "Professional management and consulting services",
-    description: "M.I Resources offers business administration and management services for clients in both large and small-scale businesses. Our experienced project management team handles projects on large scale involving a diversity of disciplines with clear structure and progress tracking.",
-    features: [
-      "Environmental Management - E.I.A (Environmental Inspection Analysis)/Oil Spill/Clean up, Compliance, Waste Management, Sustainability",
-      "Project Management - Large-Scale Multi-Discipline Coordination",
-      "Business Management Solutions and Administration - Process Optimization & Operational Management",
-      "Strategic Planning and Implementation",
-      "Budget Management",
-      "Clear Structure with Progress Monitoring"
-    ],
-    image: "/african-man-black-suit.jpg",
-    color: "text-indigo-500",
-    bgColor: "bg-indigo-500"
-  },
-  {
-    icon: CheckCircle2,
-    title: "Sales and Distribution",
-    tagline: "Strategic sales and distribution network solutions",
-    description: "M.I Resources provides comprehensive sales and distribution services, leveraging our extensive network and logistics capabilities to ensure efficient market reach and customer satisfaction across Nigeria's Oil & Gas sector.",
-    features: [
-      "Products and Services - Comprehensive portfolio of Oil & Gas solutions",
-      "Sales Strategy Development - Market Analysis & Customer Targeting",
-      "Distribution Network Management - Nationwide Coverage & Optimization",
-      "Market Development - New Territory Expansion & Market Penetration",
-      "Customer Relations - Account Management & Support Services",
-      "Order Fulfillment - Efficient Processing & Delivery Coordination",
-      "Channel Management - Multi-Channel Distribution Strategy"
-    ],
-    image: "/medium-shot-man-talking-phone.jpg",
-    color: "text-teal-500",
-    bgColor: "bg-teal-500"
-  },
-  {
-    icon: Users,
-    title: "Human Capacity Development/Training",
-    tagline: "Professional development and capacity building programs",
-    description: "M.I Resources offers comprehensive training and development programs designed to enhance workforce capabilities, improve performance, and build sustainable competitive advantage through continuous learning and skill development.",
-    features: [
-      "Leadership & Management - Executive development and team leadership skills",
-      "Policy Making & Strategic Implementation - Strategic planning and execution",
-      "Work Performance/Productivity Enhancement - Efficiency and output optimization",
-      "Sales & Marketing - Customer engagement and market strategies",
-      "Negotiations & Conflict Resolution - Effective communication and problem-solving",
-      "Supply Chain Management (SCM) - End-to-end logistics optimization",
-      "Soft Skills & Support Services - Communication, teamwork, and interpersonal skills",
-      "A.I, Business & Systems Automation - Digital transformation and technology adoption",
-      "Human Resource Management - Personnel development and organizational behavior",
-      "Stress Management & Work Life Balance - Wellness and productivity programs",
-      "Safety & Quality Assurance Training - Compliance and best practices",
-      "Emotional Intelligence & Health Education - Personal development and wellbeing"
-    ],
-    image: "/industrial-designers-working-3d-model.jpg",
-    color: "text-cyan-500",
-    bgColor: "bg-cyan-500"
-  }
-]
+// Icon mapping for dynamic icon rendering
+const iconMap: Record<string, any> = {
+  Wrench,
+  Package,
+  BarChart3,
+  Truck,
+  Lightbulb,
+  Radio,
+  CheckCircle2,
+  Users,
+  HardHat,
+}
 
-export function ServiceDetails() {
+interface ServiceDetailsProps {
+  services: ServiceDetailed[]
+}
+
+export function ServiceDetails({ services }: ServiceDetailsProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [activeTab, setActiveTab] = useState(0)
@@ -167,12 +52,12 @@ export function ServiceDetails() {
         {/* Service Tabs */}
         <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 justify-center">
           {services.map((service, index) => {
-            const IconComponent = service.icon
+            const IconComponent = iconMap[service.iconName]
             const isActive = activeTab === index
             
             return (
               <motion.button
-                key={service.title}
+                key={service._id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -183,7 +68,7 @@ export function ServiceDetails() {
                     : 'bg-card text-foreground border border-border hover:border-primary/40'
                 }`}
               >
-                <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
+                {IconComponent && <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />}
                 <span className="hidden sm:inline">{service.title}</span>
                 <span className="sm:hidden text-xs">{service.title.split(' ')[0]}</span>
               </motion.button>
@@ -203,8 +88,8 @@ export function ServiceDetails() {
             {/* Left Column - Image */}
             <div className="relative h-64 lg:h-auto min-h-[400px]">
               <Image
-                src={services[activeTab].image}
-                alt={services[activeTab].title}
+                src={getImageUrl(services[activeTab].image)}
+                alt={services[activeTab].image.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -214,12 +99,12 @@ export function ServiceDetails() {
               {/* Icon Overlay */}
               <div className="absolute bottom-6 left-6 lg:top-6 lg:bottom-auto">
                 {(() => {
-                  const IconComponent = services[activeTab].icon
-                  return (
+                  const IconComponent = iconMap[services[activeTab].iconName]
+                  return IconComponent ? (
                     <div className={`w-16 h-16 rounded-2xl ${services[activeTab].bgColor} flex items-center justify-center shadow-2xl`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                  )
+                  ) : null
                 })()}
               </div>
             </div>
@@ -233,9 +118,29 @@ export function ServiceDetails() {
                 <p className={`text-xs sm:text-sm font-semibold ${services[activeTab].color} mb-3 sm:mb-4`}>
                   {services[activeTab].tagline}
                 </p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  {services[activeTab].description}
-                </p>
+                <div className="text-sm sm:text-base text-muted-foreground leading-relaxed space-y-4">
+                  {services[activeTab].description.split('\n\n').map((paragraph, idx) => {
+                    const trimmedPara = paragraph.trim()
+                    
+                    // Check if paragraph starts with ** (bold header)
+                    if (trimmedPara.startsWith('**') && trimmedPara.includes('**', 2)) {
+                      const endBold = trimmedPara.indexOf('**', 2)
+                      const boldText = trimmedPara.substring(2, endBold)
+                      const restText = trimmedPara.substring(endBold + 2).trim()
+                      
+                      return (
+                        <div key={idx} className="space-y-2">
+                          <h4 className="text-base sm:text-lg font-bold text-foreground">{boldText}</h4>
+                          {restText && <p className="leading-relaxed">{restText}</p>}
+                        </div>
+                      )
+                    }
+                    
+                    return trimmedPara ? (
+                      <p key={idx} className="leading-relaxed">{trimmedPara}</p>
+                    ) : null
+                  })}
+                </div>
               </div>
 
               <div>

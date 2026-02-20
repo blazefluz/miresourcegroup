@@ -341,3 +341,30 @@ export interface ClientsContent {
     description?: string
   }
 }
+
+// Detailed Service (for services page)
+export interface ServiceDetailed {
+  _id: string
+  _type: 'serviceDetailed'
+  title: string
+  tagline: string
+  description: string
+  features: string[]
+  image: {
+    asset: {
+      _id: string
+      url: string
+    }
+    alt: string
+  }
+  iconName: string
+  color: string
+  bgColor: string
+  subcategories?: Array<{
+    name: string
+    href: string
+    order: number
+  }>
+  order: number
+  published: boolean
+}
